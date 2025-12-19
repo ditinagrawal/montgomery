@@ -18255,6 +18255,205 @@ strong {
   max-width: 850px;
 }
 
+/* ================= PORTFOLIO NARRATIVE BLOCKS (Option 3) ================= */
+
+.portfolio-narrative-section {
+  background: #ffffff;
+  padding: 100px 0 120px;
+}
+
+/* Header */
+.portfolio-narrative-header {
+  max-width: 820px;
+  margin-bottom: 70px;
+}
+
+.narrative-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #D6B884;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.narrative-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.25;
+  margin-bottom: 24px;
+}
+
+.narrative-intro {
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #4a4a4a;
+  max-width: 780px;
+}
+
+/* Narrative Blocks Container */
+.narrative-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Individual Narrative Block */
+.narrative-block {
+  display: flex;
+  align-items: stretch;
+  padding: 48px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.narrative-block:first-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Gold Accent Line */
+.narrative-accent {
+  width: 3px;
+  background: linear-gradient(180deg, #D6B884 0%, #c4a670 100%);
+  flex-shrink: 0;
+  margin-right: 32px;
+  border-radius: 2px;
+}
+
+/* Block Content */
+.narrative-content {
+  flex: 1;
+  max-width: 800px;
+}
+
+/* Block Title */
+.narrative-block-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+/* Block Subtitle */
+.narrative-block-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #888888;
+  letter-spacing: 0.02em;
+  margin-bottom: 18px;
+}
+
+/* Block Text */
+.narrative-block-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 16.5px;
+  line-height: 1.8;
+  color: #4a4a4a;
+  margin: 0;
+}
+
+/* Hover Effect - Subtle */
+.narrative-block:hover .narrative-accent {
+  background: linear-gradient(180deg, #D6B884 0%, #D6B884 100%);
+}
+
+.narrative-block:hover .narrative-block-title {
+  color: #0d0d0d;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 768px) {
+  .portfolio-narrative-section {
+    padding: 80px 0 90px;
+  }
+
+  .portfolio-narrative-header {
+    margin-bottom: 50px;
+  }
+
+  .narrative-title {
+    font-size: 32px;
+  }
+
+  .narrative-intro {
+    font-size: 16px;
+  }
+
+  .narrative-block {
+    padding: 40px 0;
+  }
+
+  .narrative-accent {
+    margin-right: 24px;
+  }
+
+  .narrative-block-title {
+    font-size: 23px;
+  }
+
+  .narrative-block-subtitle {
+    font-size: 14px;
+  }
+
+  .narrative-block-text {
+    font-size: 15.5px;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 575px) {
+  .portfolio-narrative-section {
+    padding: 60px 0 70px;
+  }
+
+  .portfolio-narrative-header {
+    margin-bottom: 40px;
+  }
+
+  .narrative-title {
+    font-size: 28px;
+  }
+
+  .narrative-intro {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .narrative-block {
+    padding: 32px 0;
+  }
+
+  .narrative-accent {
+    width: 2px;
+    margin-right: 18px;
+  }
+
+  .narrative-block-title {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  .narrative-block-subtitle {
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+
+  .narrative-block-text {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
+
+/* ================= END PORTFOLIO NARRATIVE BLOCKS ================= */
+
+
 /* ===== Section ===== */
 .risk-governance-section {
   background: #ffffff;
