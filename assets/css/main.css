@@ -17445,7 +17445,7 @@ strong {
   transition: all 0.3s ease;
   color: #f1f1f1;
   margin: 10px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0 0 12px rgba(0, 0, 0, 0.25); */
 }
 
 .criteria-card i {
@@ -18019,7 +18019,7 @@ strong {
 /* ================= INVESTMENT CRITERIA ================= */
 
 .investment-criteria-section {
-  background-color: #f8f8f8;
+  background-color: #fafaf8;
   padding: 100px 0;
 }
 
@@ -18032,98 +18032,155 @@ strong {
 .criteria-eyebrow {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
+  font-weight: 500;
   letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: #D6B884;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 
 .criteria-title {
   font-family: 'Playfair Display', serif;
   font-size: 38px;
-  /* Option A H2 */
   font-weight: 700;
   color: #222222;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
+  line-height: 1.25;
 }
 
 .criteria-subtext {
   font-family: 'Inter', sans-serif;
   font-size: 17px;
-  color: #444444;
-  max-width: 720px;
+  line-height: 1.6;
+  color: #555555;
+  margin: 0;
 }
 
-/* Grid */
+/* Grid (3x2) */
 .criteria-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 24px;
 }
 
 /* Card */
 .criteria-card {
   background: #ffffff;
-  border: 1px solid rgba(214, 184, 132, 0.45);
-  padding: 34px 26px;
+  border: 1px solid rgba(214, 184, 132, 0.3);
+  border-radius: 4px;
+  padding: 32px 28px;
+  min-height: 180px;
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Icon */
-.criteria-card i {
-  font-size: 28px;
+/* Icon Container */
+.criteria-icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 20px;
   color: #D6B884;
-  margin-bottom: 18px;
-  display: inline-block;
   transition: opacity 0.3s ease;
 }
 
+.criteria-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
 /* Title */
-.criteria-card h3 {
+.criteria-card-title {
   font-family: 'Playfair Display', serif;
-  font-size: 24px;
-  /* Option A H3 */
+  font-size: 21px;
   font-weight: 700;
   color: #222222;
-  margin-bottom: 0;
+  line-height: 1.35;
+  margin: 0;
+  transition: color 0.3s ease;
 }
 
 /* Description (Hidden by default) */
-.criteria-card p {
+.criteria-card-desc {
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6;
-  color: #444444;
-  margin-top: 14px;
+  color: #555555;
+  margin: 0;
+  padding-top: 14px;
   opacity: 0;
   max-height: 0;
-  transition: all 0.3s ease;
+  overflow: hidden;
+  transition: opacity 0.35s ease, max-height 0.35s ease;
 }
 
 /* Hover Effects */
 .criteria-card:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-  transform: translateY(-3px);
+  border-color: rgba(214, 184, 132, 0.5);
 }
 
-.criteria-card:hover i {
-  opacity: 0.6;
+.criteria-card:hover .criteria-icon {
+  opacity: 0.65;
 }
 
-.criteria-card:hover p {
+.criteria-card:hover .criteria-card-desc {
   opacity: 1;
-  max-height: 200px;
+  max-height: 150px;
 }
 
-/* Responsive */
+/* Responsive - Tablet */
 @media (max-width: 991px) {
   .criteria-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .criteria-card {
+    min-height: 160px;
+    padding: 28px 24px;
+  }
+
+  .criteria-card-title {
+    font-size: 20px;
   }
 }
 
+/* Responsive - Mobile */
 @media (max-width: 575px) {
+  .investment-criteria-section {
+    padding: 70px 0;
+  }
+
+  .criteria-header {
+    margin-bottom: 40px;
+  }
+
+  .criteria-title {
+    font-size: 30px;
+  }
+
   .criteria-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .criteria-card {
+    min-height: auto;
+    padding: 24px 22px;
+  }
+
+  .criteria-icon {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 16px;
+  }
+
+  .criteria-card-title {
+    font-size: 19px;
+  }
+
+  .criteria-card-desc {
+    font-size: 14px;
   }
 }
 
