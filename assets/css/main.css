@@ -18698,135 +18698,315 @@ strong {
 
 
 /* =========================================================
-   OUR CORE PRINCIPLES — HORIZONTAL FLOW LINE
+   CORE PRINCIPLES — CIRCULAR CYCLE LAYOUT
    ========================================================= */
 
-/* =========================================================
-   CORE PRINCIPLES — HORIZONTAL FLOW LINE
-   ========================================================= */
-
-.core-principles-section {
-  background-color: #f8f8f8;
-  padding: 120px 0;
+.principles-cycle-section {
+  background-color: #f9f9f8;
+  padding: 120px 0 140px;
 }
 
 /* Header */
-.principles-header {
-  max-width: 900px;
-  margin-bottom: 90px;
+.principles-cycle-header {
+  max-width: 800px;
+  margin-bottom: 80px;
 }
 
-.principles-header h5 {
+.principles-label {
   font-family: 'Inter', sans-serif;
   font-size: 13px;
-  letter-spacing: 1.5px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: #D6B884;
-  margin-bottom: 14px;
+  display: block;
+  margin-bottom: 16px;
 }
 
-.principles-header h2 {
+.principles-title {
   font-family: 'Playfair Display', serif;
   font-size: 38px;
   font-weight: 700;
-  color: #1c1c1c;
+  color: #1a1a1a;
+  line-height: 1.25;
 }
 
-/* Wrapper */
-.principles-flow-wrapper {
+/* Circular Wrapper */
+.principles-cycle-wrapper {
   position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 900px;
+  margin: 0 auto;
 }
 
-/* Horizontal Line */
-.flow-line {
+/* The Faint Circle Ring */
+.principles-circle-ring {
   position: absolute;
-  top: 18px;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background-color: rgba(0, 0, 0, 0.08);
-}
-
-/* Flow */
-.principles-flow {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 48px;
-}
-
-/* Node */
-.flow-node {
-  position: relative;
-  padding-top: 36px;
-}
-
-/* Marker */
-.flow-node::before {
-  content: "";
-  position: absolute;
-  top: 14px;
-  left: 0;
-  width: 8px;
-  height: 8px;
-  background-color: #D6B884;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 520px;
+  height: 520px;
+  border: 1px solid rgba(214, 184, 132, 0.25);
   border-radius: 50%;
+  pointer-events: none;
 }
 
-/* Title */
-.flow-node h4 {
+/* Center Text */
+.principles-center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 260px;
+}
+
+.principles-center-text p {
   font-family: 'Playfair Display', serif;
-  font-size: 20px;
+  font-size: 18px;
+  font-style: italic;
+  color: #888888;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Circle Dots - Precisely positioned on circle perimeter */
+/* Circle: 520px diameter, centered in 900px wrapper */
+/* Radius: 260px, Center: (450px, 450px) */
+/* 7 dots at 51.43° intervals starting from top (270°) */
+
+.circle-dot {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: #D6B884;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* Dot positions calculated: x = 450 + 260*cos(angle), y = 450 + 260*sin(angle) */
+.dot-1 {
+  top: 190px;
+  left: 450px;
+}
+
+/* 270° - Top */
+.dot-2 {
+  top: 286px;
+  left: 652px;
+}
+
+/* 321.43° - Top Right */
+.dot-3 {
+  top: 508px;
+  left: 703px;
+}
+
+/* 12.86° - Right */
+.dot-4 {
+  top: 684px;
+  left: 563px;
+}
+
+/* 64.29° - Bottom Right */
+.dot-5 {
+  top: 684px;
+  left: 337px;
+}
+
+/* 115.71° - Bottom Left */
+.dot-6 {
+  top: 508px;
+  left: 197px;
+}
+
+/* 167.14° - Left */
+.dot-7 {
+  top: 286px;
+  left: 248px;
+}
+
+/* 218.57° - Top Left */
+
+/* Individual Principle Nodes */
+.principle-node {
+  position: absolute;
+  width: 200px;
+  text-align: left;
+}
+
+.principle-node-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
   font-weight: 600;
-  color: #1c1c1c;
-  margin-bottom: 6px;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  line-height: 1.3;
+  transition: color 0.25s ease;
 }
 
-/* Description */
-.flow-node p {
+.principle-node-desc {
   font-family: 'Inter', sans-serif;
-  font-size: 15.5px;
+  font-size: 14px;
   line-height: 1.65;
-  color: #555;
-  max-width: 220px;
+  color: #666666;
+  margin: 0;
   opacity: 0;
-  transition: opacity 0.25s ease;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
 }
 
-/* Hover reveal */
-.flow-node:hover p {
+/* Hover reveal description */
+.principle-node:hover .principle-node-title {
+  color: #D6B884;
+}
+
+.principle-node:hover .principle-node-desc {
   opacity: 1;
+  max-height: 150px;
+}
+
+/* Position each node around the circle - aligned with dots */
+/* Node 1 - Top */
+.principle-node-1 {
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+/* Node 2 - Top Right */
+.principle-node-2 {
+  top: 230px;
+  left: 680px;
+}
+
+/* Node 3 - Right */
+.principle-node-3 {
+  top: 480px;
+  left: 720px;
+}
+
+/* Node 4 - Bottom Right */
+.principle-node-4 {
+  top: 700px;
+  left: 560px;
+}
+
+/* Node 5 - Bottom Left */
+.principle-node-5 {
+  top: 700px;
+  left: 140px;
+}
+
+/* Node 6 - Left */
+.principle-node-6 {
+  top: 480px;
+  left: -20px;
+}
+
+/* Node 7 - Top Left */
+.principle-node-7 {
+  top: 230px;
+  left: 50px;
 }
 
 /* =========================================================
-   Responsive
+   Responsive - Tablet (Switch to Grid)
    ========================================================= */
 
-@media (max-width: 1199px) {
-  .principles-flow {
-    grid-template-columns: repeat(4, 1fr);
-    row-gap: 60px;
+@media (max-width: 991px) {
+  .principles-cycle-section {
+    padding: 90px 0 100px;
   }
 
-  .flow-line {
+  .principles-cycle-header {
+    margin-bottom: 50px;
+  }
+
+  .principles-title {
+    font-size: 32px;
+  }
+
+  /* Switch to grid layout on tablet */
+  .principles-cycle-wrapper {
+    height: auto;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 50px;
+  }
+
+  .principles-circle-ring {
     display: none;
   }
 
-  .flow-node p {
+  .circle-dot {
+    display: none;
+  }
+
+  .principles-center-text {
+    display: none;
+  }
+
+  .principle-node {
+    position: static;
+    width: 100%;
+    transform: none;
+    text-align: left;
+    padding-left: 24px;
+    border-left: 2px solid rgba(214, 184, 132, 0.4);
+  }
+
+  .principle-node-title {
+    font-size: 20px;
+  }
+
+  .principle-node-desc {
     opacity: 1;
+    max-height: none;
+    font-size: 15px;
   }
 }
 
-@media (max-width: 767px) {
-  .principles-flow {
+/* =========================================================
+   Responsive - Mobile (Single Column)
+   ========================================================= */
+
+@media (max-width: 575px) {
+  .principles-cycle-section {
+    padding: 70px 0 80px;
+  }
+
+  .principles-cycle-header {
+    margin-bottom: 40px;
+  }
+
+  .principles-title {
+    font-size: 28px;
+  }
+
+  .principles-cycle-wrapper {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
   }
 
-  .flow-node {
-    padding-top: 0;
+  .principle-node {
+    padding-left: 20px;
   }
 
-  .flow-node::before {
-    display: none;
+  .principle-node-title {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .principle-node-desc {
+    font-size: 14px;
+    line-height: 1.6;
   }
 }
 
