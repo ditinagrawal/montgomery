@@ -134,35 +134,82 @@
 
 
 <section class="investment-approach dark-section">
-  <div class="container" style="padding-top: 110px">
-  </br>
-     <h1 class="headline" style="margin-bottom: 20px; font-family: sans-serif;">INVESTMENT APPROACH</h1>
-
-    <div class="ia-content">
-      <p>
-        At Montgomery Capital, investing begins with clarity - understanding the business, the people behind it, and the long-term drivers that matter.
-      </p>
-
-      <p>
-        Our process is structured to identify enduring opportunities across listed equities, pre IPO and late stage investments, anchor and QIB allocations, and selective special situations.
-      </p>
-
-      <p>
-        The focus remains the same across market environments: thoughtful research, disciplined execution, and decisions that stand the test of time.
-      </p>
-    </div>
+  <div class="container hero-title-card">
+    <h1 class="hero-title">INVESTMENT APPROACH</h1>
+    <p class="hero-subline">At Montgomery Capital, investing begins with clarity — understanding the business, the people behind it, and the long-term drivers that matter.</p>
   </div>
 </section>
 
 <style>
-.ia-heading {
+/* Hero Title Card */
+.hero-title-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 20px 10px;
+  min-height: 40vh;
+}
+
+.hero-title {
   font-family: 'Playfair Display', serif;
-  font-size: 38px;              /* Option A: H2 */
+  font-size: 38px;
   font-weight: 700;
-  color: #D6B884 !important;    /* FORCE gold visibility */
-  letter-spacing: 0.04em;
-  margin-bottom: 36px;
-  text-align: left;
+  color: #D6B884 !important;
+  margin-bottom: 40px;
+  letter-spacing: 0.02em;
+}
+
+.hero-subline {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(14px, 1.8vw, 18px);
+  font-weight: 300;
+  font-style: italic;
+  color: #ffffff !important;
+  white-space: nowrap;
+  max-width: 92%;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+@media (max-width: 992px) {
+  .hero-title-card {
+    padding: 120px 20px 100px;
+    min-height: 50vh;
+  }
+  
+  .hero-subline {
+    font-size: clamp(13px, 2vw, 16px);
+    white-space: nowrap;
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title-card {
+    padding: 100px 15px 80px;
+    min-height: 45vh;
+  }
+  
+  .hero-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+  
+  .hero-subline {
+    font-size: clamp(12px, 2.2vw, 15px);
+    white-space: nowrap;
+    max-width: 96%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-subline {
+    font-size: clamp(11px, 2.5vw, 14px);
+    white-space: nowrap;
+    max-width: 98%;
+  }
 }
 
 /* Heading styles to match Page 1 */
