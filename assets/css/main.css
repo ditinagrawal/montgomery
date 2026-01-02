@@ -19041,53 +19041,19 @@ strong {
   padding: 110px 0 130px;
 }
 
-/* Header */
-.faq-premium-header {
-  max-width: 800px;
-  margin-bottom: 60px;
-}
-
-.faq-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #D6B884;
-  display: block;
-  margin-bottom: 16px;
-}
-
-.faq-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 38px;
-  font-weight: 700;
-  color: #1a1a1a;
-  line-height: 1.25;
-  margin-bottom: 18px;
-}
-
-.faq-subtitle {
-  font-family: 'Inter', sans-serif;
-  font-size: 17px;
-  line-height: 1.75;
-  color: #555555;
-  max-width: 680px;
-  margin: 0;
-}
-
-/* Premium Accordion */
+/* Premium Accordion - Centered with balanced margins */
 .faq-accordion-premium {
-  max-width: 880px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .faq-accordion-premium .accordion-item {
   background: transparent;
   border: none;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
-/* Question Bar — Softer Champagne Gold */
+/* Question Bar — Consistent Typography */
 .faq-accordion-premium .accordion-button {
   background-color: #f8f5f0;
   border: 1px solid rgba(200, 175, 130, 0.30);
@@ -19100,8 +19066,9 @@ strong {
   color: #1a1a1a;
   display: flex;
   align-items: center;
-  gap: 20px;
-  transition: all 0.25s ease;
+  text-align: left;
+  transition: all 0.2s ease;
+  line-height: 1.4;
 }
 
 .faq-accordion-premium .accordion-button:focus {
@@ -19120,25 +19087,16 @@ strong {
   border-color: rgba(200, 175, 130, 0.40);
 }
 
-/* Gold Number Tag */
-.faq-accordion-premium .faq-number {
-  font-family: 'Playfair Display', serif;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  color: #c8a664;
-  flex-shrink: 0;
-  min-width: 28px;
-}
-
 /* Gold Chevron Icon */
 .faq-accordion-premium .accordion-button::after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23c8a664' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-size: 18px;
   width: 18px;
   height: 18px;
-  transition: transform 0.3s ease, opacity 0.25s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease;
   opacity: 0.75;
+  flex-shrink: 0;
+  margin-left: auto;
 }
 
 .faq-accordion-premium .accordion-button:hover::after {
@@ -19150,7 +19108,7 @@ strong {
   opacity: 1;
 }
 
-/* Answer Panel — Refined Dark */
+/* Answer Panel — Consistent Typography */
 .faq-accordion-premium .accordion-body {
   background-color: #3a3a3a;
   color: #e0e0e0;
@@ -19190,32 +19148,21 @@ strong {
     padding: 80px 0 100px;
   }
 
-  .faq-premium-header {
-    margin-bottom: 45px;
-  }
-
-  .faq-title {
-    font-size: 32px;
-  }
-
-  .faq-subtitle {
-    font-size: 15px;
-  }
-
   .faq-accordion-premium .accordion-button {
     font-size: 19px;
     padding: 22px 26px;
     min-height: 72px;
-    gap: 16px;
-  }
-
-  .faq-accordion-premium .faq-number {
-    font-size: 14px;
   }
 
   .faq-accordion-premium .accordion-body {
     padding: 26px 28px 28px;
     font-size: 15px;
+    line-height: 1.85;
+  }
+
+  .faq-accordion-premium .accordion-body::before {
+    left: 28px;
+    right: 28px;
   }
 }
 
@@ -19225,34 +19172,16 @@ strong {
     padding: 60px 0 80px;
   }
 
-  .faq-premium-header {
-    margin-bottom: 36px;
-  }
-
-  .faq-title {
-    font-size: 28px;
-  }
-
-  .faq-subtitle {
-    font-size: 14px;
-  }
-
   .faq-accordion-premium .accordion-button {
     font-size: 17px;
     padding: 20px 22px;
     min-height: 66px;
-    gap: 14px;
-  }
-
-  .faq-accordion-premium .faq-number {
-    font-size: 13px;
-    min-width: 24px;
   }
 
   .faq-accordion-premium .accordion-body {
     padding: 22px 22px 24px;
     font-size: 14.5px;
-    line-height: 1.75;
+    line-height: 1.85;
   }
 
   .faq-accordion-premium .accordion-body::before {
