@@ -17875,142 +17875,172 @@ strong {
   padding: 100px 0;
 }
 
-/* Header */
-.framework-header {
-  max-width: 720px;
-  margin-bottom: 60px;
+/* Institutional Framework Layout - Full Width */
+.framework-institutional {
+  width: 100%;
+  max-width: 100%;
+  margin: 60px auto 0;
+  padding: 0;
 }
 
-.framework-eyebrow {
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  letter-spacing: 0.14em;
-  color: #D6B884;
-  margin-bottom: 10px;
+/* Framework Step - Full Width Grid */
+.framework-step {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 50px;
+  padding: 50px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  align-items: start;
 }
 
-.framework-title {
+.framework-step:last-child {
+  border-bottom: none;
+}
+
+.framework-step:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-left: -30px;
+  margin-right: -30px;
+  border-radius: 0;
+}
+
+/* Step Number - Left Column */
+.framework-step-number {
   font-family: 'Playfair Display', serif;
-  font-size: 38px;
-  font-weight: 700;
-  color: #222222;
-}
-
-/* Stacked Cards Container */
-.framework-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 900px;
-}
-
-/* Individual Card */
-.framework-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 28px;
-  background-color: #ffffff;
-  padding: 32px 36px;
-  border-radius: 4px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-  transition: box-shadow 0.3s ease;
-}
-
-.framework-card:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
-
-/* Gold Number */
-.framework-number {
-  font-family: 'Playfair Display', serif;
-  font-size: 36px;
+  font-size: 42px;
   font-weight: 600;
   color: #D6B884;
   line-height: 1;
-  flex-shrink: 0;
-  min-width: 50px;
+  text-align: left;
+  padding-top: 2px;
 }
 
-/* Card Content */
-.framework-card-content {
-  flex: 1;
+/* Step Body - Right Column, Full Width */
+.framework-step-body {
+  width: 100%;
+  max-width: 100%;
 }
 
-/* Card Title */
-.framework-card-title {
+/* Step Title */
+.framework-step-title {
   font-family: 'Playfair Display', serif;
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 700;
   color: #222222;
-  margin-bottom: 10px;
+  margin: 0 0 18px 0;
+  line-height: 1.2;
 }
 
-/* Card Description */
-.framework-card-content p {
+/* Step Text */
+.framework-step-text {
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #555555;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #444444;
   margin: 0;
+  max-width: 100%;
+}
+
+/* Responsive - Large Desktop */
+@media (min-width: 1400px) {
+  .framework-step {
+    grid-template-columns: 120px 1fr;
+    gap: 60px;
+  }
+  
+  .framework-step-number {
+    font-size: 48px;
+  }
+  
+  .framework-step-title {
+    font-size: 30px;
+  }
+  
+  .framework-step-text {
+    font-size: 19px;
+  }
 }
 
 /* Responsive - Tablet */
-@media (max-width: 768px) {
-  .framework-card {
-    padding: 28px 28px;
-    gap: 22px;
+@media (max-width: 992px) {
+  .framework-step {
+    grid-template-columns: 80px 1fr;
+    gap: 40px;
+    padding: 45px 0;
   }
 
-  .framework-number {
-    font-size: 32px;
-    min-width: 44px;
+  .framework-step-number {
+    font-size: 36px;
   }
 
-  .framework-card-title {
-    font-size: 20px;
+  .framework-step-title {
+    font-size: 24px;
+    margin-bottom: 16px;
   }
 
-  .framework-card-content p {
-    font-size: 15px;
+  .framework-step-text {
+    font-size: 17px;
+    line-height: 1.75;
   }
 }
 
 /* Responsive - Mobile */
+@media (max-width: 768px) {
+  .investment-framework-section {
+    padding: 80px 0;
+  }
+
+  .framework-institutional {
+    margin-top: 40px;
+  }
+
+  .framework-step {
+    grid-template-columns: 60px 1fr;
+    gap: 30px;
+    padding: 40px 0;
+  }
+
+  .framework-step-number {
+    font-size: 32px;
+  }
+
+  .framework-step-title {
+    font-size: 22px;
+    margin-bottom: 14px;
+  }
+
+  .framework-step-text {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+}
+
 @media (max-width: 575px) {
   .investment-framework-section {
     padding: 70px 0;
   }
 
-  .framework-header {
-    margin-bottom: 40px;
+  .framework-step {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 35px 0;
   }
 
-  .framework-title {
-    font-size: 30px;
-  }
-
-  .framework-cards {
-    gap: 16px;
-  }
-
-  .framework-card {
-    flex-direction: column;
-    padding: 24px 22px;
-    gap: 12px;
-  }
-
-  .framework-number {
+  .framework-step-number {
     font-size: 28px;
-    min-width: auto;
+    margin-bottom: 8px;
   }
 
-  .framework-card-title {
-    font-size: 19px;
+  .framework-step-title {
+    font-size: 20px;
+    margin-bottom: 12px;
   }
 
-  .framework-card-content p {
+  .framework-step-text {
     font-size: 15px;
-    line-height: 1.65;
+    line-height: 1.7;
   }
 }
 
