@@ -18534,161 +18534,145 @@ strong {
 
 /* Header */
 .governance-header {
-  max-width: 800px;
-  margin-bottom: 60px;
-}
-
-.governance-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #D6B884;
-  display: block;
-  margin-bottom: 16px;
-}
-
-.governance-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 38px;
-  font-weight: 700;
-  color: #1a1a1a;
-  line-height: 1.25;
-  margin-bottom: 22px;
+  margin-bottom: 70px;
 }
 
 .governance-intro {
   font-family: 'Inter', sans-serif;
-  font-size: 17px;
-  line-height: 1.8;
-  color: #4a4a4a;
-  max-width: 760px;
+  font-size: 18px;
+  line-height: 1.75;
+  color: #333333;
+  margin: 0;
+  text-align: left;
+  max-width: 100%;
 }
 
-/* Scroll Container */
-.governance-scroll-container {
+/* Five Pillar Structure - Desktop: Five Columns */
+.governance-pillars {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Individual Pillar */
+.governance-pillar {
+  padding: 50px 30px;
   position: relative;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-/* Scroll Track */
-.governance-scroll-track {
-  flex: 1;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.governance-scroll-track::-webkit-scrollbar {
-  display: none;
-}
-
-/* Panels Container */
-.governance-panels {
-  display: flex;
-  flex-wrap: nowrap;
-  scroll-behavior: smooth;
-}
-
-/* Individual Panel — Institutional Style */
-.governance-panel {
-  flex: 0 0 320px;
-  min-height: 320px;
-  padding: 48px 40px 56px;
-  background: #ffffff;
-  border-right: 1px solid rgba(0, 0, 0, 0.06);
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  text-align: left;
 }
 
-.governance-panel:last-child {
+.governance-pillar:last-child {
   border-right: none;
 }
 
-/* Panel Number */
-.panel-number {
+/* Governance Number */
+.governance-number {
   font-family: 'Playfair Display', serif;
   font-size: 14px;
   font-weight: 600;
   color: #D6B884;
   letter-spacing: 0.05em;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   display: block;
 }
 
-/* Panel Title */
-.panel-title {
+/* Pillar Title */
+.governance-pillar-title {
   font-family: 'Playfair Display', serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #222222;
   line-height: 1.3;
-  margin-bottom: 20px;
+  margin: 0 0 18px 0;
 }
 
-/* Panel Text */
-.panel-text {
+/* Pillar Text */
+.governance-pillar-text {
   font-family: 'Inter', sans-serif;
-  font-size: 15.5px;
+  font-size: 15px;
   line-height: 1.75;
-  color: #555555;
+  color: #444444;
   margin: 0;
-  flex: 1;
 }
 
-/* Subtle Arrows */
-.governance-arrow {
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  cursor: pointer;
-  transition: all 0.25s ease;
-  flex-shrink: 0;
-}
-
-.governance-arrow svg {
-  color: #666666;
-  transition: color 0.25s ease;
-}
-
-.governance-arrow:hover {
-  border-color: #D6B884;
-  background: transparent;
-}
-
-.governance-arrow:hover svg {
-  color: #D6B884;
-}
-
-/* Responsive - Tablet */
-@media (max-width: 991px) {
-  .governance-panel {
-    flex: 0 0 300px;
-    padding: 42px 34px 48px;
-    min-height: 300px;
+/* Responsive - Tablet: Fallback to Editorial Stack */
+@media (max-width: 1200px) {
+  .governance-pillars {
+    grid-template-columns: 1fr;
+    border-top: none;
+    border-bottom: none;
+    border-left: 2px solid #D6B884;
+    padding-left: 40px;
   }
 
-  .panel-title {
+  .governance-pillar {
+    padding: 50px 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .governance-pillar:last-child {
+    border-bottom: none;
+  }
+
+  .governance-number {
+    margin-bottom: 20px;
+  }
+
+  .governance-pillar-title {
     font-size: 22px;
+    margin-bottom: 16px;
   }
 
-  .panel-text {
-    font-size: 15px;
+  .governance-pillar-text {
+    font-size: 16px;
   }
 }
 
 /* Responsive - Mobile */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+  .governance-section {
+    padding: 80px 0 90px;
+  }
+
+  .governance-header {
+    margin-bottom: 50px;
+  }
+
+  .governance-intro {
+    font-size: 17px;
+  }
+
+  .governance-pillars {
+    padding-left: 30px;
+  }
+
+  .governance-pillar {
+    padding: 40px 0;
+  }
+
+  .governance-number {
+    font-size: 13px;
+    margin-bottom: 18px;
+  }
+
+  .governance-pillar-title {
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+
+  .governance-pillar-text {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 575px) {
   .governance-section {
     padding: 70px 0 80px;
   }
@@ -18697,69 +18681,32 @@ strong {
     margin-bottom: 40px;
   }
 
-  .governance-title {
-    font-size: 30px;
-  }
-
   .governance-intro {
-    font-size: 15px;
+    font-size: 16px;
+    line-height: 1.7;
   }
 
-  .governance-scroll-container {
-    gap: 12px;
+  .governance-pillars {
+    padding-left: 20px;
   }
 
-  .governance-arrow {
-    width: 36px;
-    height: 36px;
+  .governance-pillar {
+    padding: 35px 0;
   }
 
-  .governance-arrow svg {
-    width: 16px;
-    height: 16px;
-  }
-
-  .governance-panel {
-    flex: 0 0 280px;
-    padding: 36px 28px 42px;
-    min-height: 280px;
-  }
-
-  .panel-number {
-    font-size: 13px;
-    margin-bottom: 22px;
-  }
-
-  .panel-title {
-    font-size: 20px;
+  .governance-number {
+    font-size: 12px;
     margin-bottom: 16px;
   }
 
-  .panel-text {
+  .governance-pillar-title {
+    font-size: 19px;
+    margin-bottom: 12px;
+  }
+
+  .governance-pillar-text {
     font-size: 14.5px;
     line-height: 1.7;
-  }
-}
-
-@media (max-width: 575px) {
-  .governance-arrow {
-    display: none;
-  }
-
-  .governance-scroll-track {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .governance-scroll-track::-webkit-scrollbar {
-    display: none;
-  }
-
-  .governance-panel {
-    flex: 0 0 85vw;
-    min-height: auto;
   }
 }
 

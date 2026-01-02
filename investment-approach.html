@@ -485,14 +485,16 @@
 <!--===== PORTFOLIO APPROACH SECTION END =====-->
 
 
-<!--===== RISK & GOVERNANCE DISCIPLINE — INSTITUTIONAL POLICY SCROLL =====-->
+<!--===== RISK & GOVERNANCE DISCIPLINE =====-->
 <section class="governance-section">
   <div class="container">
 
     <!-- Section Header -->
     <div class="governance-header">
       <h2 class="heading">RISK & GOVERNANCE DISCIPLINE</h2>
+      <div class="space20"></div>
       <h3 class="subheading" style="color:#D6B884 !important; font-style:italic;">embedding prudence at every stage</h3>
+      <div class="space20"></div>
       <p class="governance-intro">
         Risk, for us, is the possibility of permanent capital loss rather than the short-term swings of the market.
         Our framework embeds discipline at every stage so decisions remain measured, consistent, and aligned with
@@ -500,65 +502,54 @@
       </p>
     </div>
 
-    <!-- Institutional Policy Scroll -->
-    <div class="governance-scroll-container">
-      <button class="governance-arrow governance-arrow-left" aria-label="Scroll left" onclick="scrollGovernance(-1)">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <polyline points="15 18 9 12 15 6"></polyline>
-        </svg>
-      </button>
-
-      <div class="governance-scroll-track">
-        <div class="governance-panels">
-
-          <div class="governance-panel">
-            <span class="panel-number">01</span>
-            <h3 class="panel-title">Portfolio-Level Controls</h3>
-            <p class="panel-text">
-              Exposure is managed through clear limits on position sizing, sector concentration, liquidity, and correlation. The objective is stability across market environments.
-            </p>
-          </div>
-
-          <div class="governance-panel">
-            <span class="panel-number">02</span>
-            <h3 class="panel-title">Security-Level Assessment</h3>
-            <p class="panel-text">
-              We evaluate accounting quality, promoter integrity, governance behaviour, and downside scenarios. Valuation discipline anchors both entry and exit decisions.
-            </p>
-          </div>
-
-          <div class="governance-panel">
-            <span class="panel-number">03</span>
-            <h3 class="panel-title">Liquidity & Process Discipline</h3>
-            <p class="panel-text">
-              Each position is sized with liquidity, redemption sensitivity, and execution feasibility in mind. This ensures flexibility without compromising portfolio quality.
-            </p>
-          </div>
-
-          <div class="governance-panel">
-            <span class="panel-number">04</span>
-            <h3 class="panel-title">Prudent Use of Derivatives</h3>
-            <p class="panel-text">
-              Derivatives, when used, are strictly for hedging and efficiency, and never for leverage or speculation. Protection drives their purpose.
-            </p>
-          </div>
-
-          <div class="governance-panel">
-            <span class="panel-number">05</span>
-            <h3 class="panel-title">Independent Oversight</h3>
-            <p class="panel-text">
-              The trustee, custodian, fund accountant, statutory auditor, and compliance advisor provide external layers of supervision, reinforcing transparency and regulatory alignment.
-            </p>
-          </div>
-
-        </div>
+    <!-- Five Pillar Structure -->
+    <div class="governance-pillars">
+      
+      <!-- Pillar 1 -->
+      <div class="governance-pillar">
+        <span class="governance-number">01</span>
+        <h3 class="governance-pillar-title">Portfolio-Level Controls</h3>
+        <p class="governance-pillar-text">
+          Exposure is managed through clear limits on position sizing, sector concentration, liquidity, and correlation. The objective is stability across market environments.
+        </p>
       </div>
 
-      <button class="governance-arrow governance-arrow-right" aria-label="Scroll right" onclick="scrollGovernance(1)">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <polyline points="9 18 15 12 9 6"></polyline>
-        </svg>
-      </button>
+      <!-- Pillar 2 -->
+      <div class="governance-pillar">
+        <span class="governance-number">02</span>
+        <h3 class="governance-pillar-title">Security-Level Assessment</h3>
+        <p class="governance-pillar-text">
+          We evaluate accounting quality, promoter integrity, governance behaviour, and downside scenarios. Valuation discipline anchors both entry and exit decisions.
+        </p>
+      </div>
+
+      <!-- Pillar 3 -->
+      <div class="governance-pillar">
+        <span class="governance-number">03</span>
+        <h3 class="governance-pillar-title">Liquidity & Process Discipline</h3>
+        <p class="governance-pillar-text">
+          Each position is sized with liquidity, redemption sensitivity, and execution feasibility in mind. This ensures flexibility without compromising portfolio quality.
+        </p>
+      </div>
+
+      <!-- Pillar 4 -->
+      <div class="governance-pillar">
+        <span class="governance-number">04</span>
+        <h3 class="governance-pillar-title">Prudent Use of Derivatives</h3>
+        <p class="governance-pillar-text">
+          Derivatives, when used, are strictly for hedging and efficiency, and never for leverage or speculation. Protection drives their purpose.
+        </p>
+      </div>
+
+      <!-- Pillar 5 -->
+      <div class="governance-pillar">
+        <span class="governance-number">05</span>
+        <h3 class="governance-pillar-title">Independent Oversight</h3>
+        <p class="governance-pillar-text">
+          The trustee, custodian, fund accountant, statutory auditor, and compliance advisor provide external layers of supervision, reinforcing transparency and regulatory alignment.
+        </p>
+      </div>
+
     </div>
 
   </div>
@@ -1033,37 +1024,6 @@
 </script>
 
 
-<script>
-function scrollGovernance(direction) {
-  const container = document.querySelector('.governance-panels');
-  const panels = container.querySelectorAll('.governance-panel');
-  if (!container || panels.length === 0) return;
-
-  const panelWidth = panels[0].offsetWidth;
-  const maxScroll = container.scrollWidth - container.parentElement.clientWidth;
-  const currentScroll = container.parentElement.scrollLeft;
-  const step = panelWidth;
-
-  // Use the track for scrolling
-  const track = document.querySelector('.governance-scroll-track');
-
-  if (direction > 0) {
-    // RIGHT
-    if (track.scrollLeft + step >= maxScroll - 5) {
-      track.scrollTo({ left: 0, behavior: 'smooth' });
-    } else {
-      track.scrollBy({ left: step, behavior: 'smooth' });
-    }
-  } else {
-    // LEFT
-    if (track.scrollLeft <= 5) {
-      track.scrollTo({ left: maxScroll, behavior: 'smooth' });
-    } else {
-      track.scrollBy({ left: -step, behavior: 'smooth' });
-    }
-  }
-}
-</script>
 
 
 
