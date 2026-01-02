@@ -17949,15 +17949,15 @@ strong {
     grid-template-columns: 120px 1fr;
     gap: 60px;
   }
-  
+
   .framework-step-number {
     font-size: 48px;
   }
-  
+
   .framework-step-title {
     font-size: 30px;
   }
-  
+
   .framework-step-text {
     font-size: 19px;
   }
@@ -18387,15 +18387,15 @@ strong {
     padding: 70px 50px;
     min-height: 300px;
   }
-  
+
   .pillar-heading {
     font-size: 24px;
   }
-  
+
   .pillar-subline {
     font-size: 16px;
   }
-  
+
   .pillar-detail {
     font-size: 17px;
   }
@@ -18724,136 +18724,117 @@ strong {
   padding: 120px 0 140px;
 }
 
-/* Header */
-.principles-cycle-header {
-  max-width: 800px;
-  margin-bottom: 80px;
-}
-
-.principles-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #D6B884;
-  display: block;
-  margin-bottom: 16px;
-}
-
-.principles-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 38px;
-  font-weight: 700;
-  color: #1a1a1a;
-  line-height: 1.25;
-}
+/* Header - Now uses standard heading structure */
 
 /* Circular Wrapper */
 .principles-cycle-wrapper {
   position: relative;
   width: 100%;
   max-width: 900px;
-  height: 900px;
+  height: 700px;
   margin: 0 auto;
+  overflow: visible;
+  /* Ensures nodes have space and don't overlap */
 }
 
-/* The Faint Circle Ring */
+/* The Faint Circle Ring - Reduced size for subtle anchor */
 .principles-circle-ring {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 520px;
-  height: 520px;
-  border: 1px solid rgba(214, 184, 132, 0.25);
+  width: 380px;
+  height: 380px;
+  border: 1px solid rgba(214, 184, 132, 0.15);
   border-radius: 50%;
   pointer-events: none;
 }
 
-/* Center Text */
+/* Center - Empty for restraint and clarity */
 .principles-center-text {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 350px;
+  left: 450px;
   transform: translate(-50%, -50%);
-  text-align: center;
-  max-width: 260px;
-}
-
-.principles-center-text p {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
-  font-style: italic;
-  color: #888888;
-  line-height: 1.5;
-  margin: 0;
+  width: 0;
+  height: 0;
+  /* Center remains empty - no text, no content */
 }
 
 /* Circle Dots - Precisely positioned on circle perimeter */
-/* Circle: 520px diameter, centered in 900px wrapper */
-/* Radius: 260px, Center: (450px, 450px) */
-/* 7 dots at 51.43° intervals starting from top (270°) */
+/* Circle: 380px diameter, centered in 900px x 700px wrapper */
+/* Radius: 190px, Center: (450px, 350px) */
+/* 7 dots at 51.43° intervals (360°/7) starting from top (270°) */
 
 .circle-dot {
   position: absolute;
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   background: #D6B884;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
 }
 
-/* Dot positions calculated: x = 450 + 260*cos(angle), y = 450 + 260*sin(angle) */
+/* Dot positions calculated: x = 450 + 190*cos(angle), y = 350 + 190*sin(angle) */
+/* All dots positioned on the same radius (190px from center) */
 .dot-1 {
-  top: 190px;
+  top: 160px;
   left: 450px;
 }
 
 /* 270° - Top */
+
 .dot-2 {
-  top: 286px;
-  left: 652px;
+  top: 232px;
+  left: 598px;
 }
 
 /* 321.43° - Top Right */
+
 .dot-3 {
-  top: 508px;
-  left: 703px;
+  top: 392px;
+  left: 636px;
 }
 
 /* 12.86° - Right */
+
 .dot-4 {
-  top: 684px;
-  left: 563px;
+  top: 521px;
+  left: 534px;
 }
 
 /* 64.29° - Bottom Right */
+
 .dot-5 {
-  top: 684px;
-  left: 337px;
+  top: 521px;
+  left: 366px;
 }
 
-/* 115.71° - Bottom Left */
+/* 115.72° - Bottom Left */
+
 .dot-6 {
-  top: 508px;
-  left: 197px;
+  top: 392px;
+  left: 264px;
 }
 
-/* 167.14° - Left */
+/* 167.15° - Left */
+
 .dot-7 {
-  top: 286px;
-  left: 248px;
+  top: 232px;
+  left: 302px;
 }
 
-/* 218.57° - Top Left */
+/* 218.58° - Top Left */
 
 /* Individual Principle Nodes */
 .principle-node {
   position: absolute;
-  width: 200px;
+  width: 220px;
+  max-width: 220px;
   text-align: left;
+  /* All nodes positioned at consistent radius from center */
+  /* Text flows outward, never inward toward center */
 }
 
 .principle-node-title {
@@ -18861,77 +18842,95 @@ strong {
   font-size: 19px;
   font-weight: 600;
   color: #1a1a1a;
-  margin-bottom: 8px;
-  line-height: 1.3;
-  transition: color 0.25s ease;
+  margin-bottom: 10px;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  /* No transitions or hover effects - calm and deliberate */
 }
 
 .principle-node-desc {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
-  line-height: 1.65;
-  color: #666666;
+  line-height: 1.7;
+  color: #555555;
   margin: 0;
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 0.3s ease, max-height 0.3s ease;
-}
-
-/* Hover reveal description */
-.principle-node:hover .principle-node-title {
-  color: #D6B884;
-}
-
-.principle-node:hover .principle-node-desc {
+  padding: 0;
   opacity: 1;
-  max-height: 150px;
+  max-height: none;
+  overflow: visible;
+  letter-spacing: 0.01em;
+  word-wrap: break-word;
+  /* Descriptions always visible - no hover interactions */
+  /* Text flows outward from circle, never intrudes into center */
 }
 
-/* Position each node around the circle - aligned with dots */
-/* Node 1 - Top */
+/* Position each node around the circle - equidistantly spaced on same radius */
+/* All nodes positioned at 230px radius from center (450px, 350px) */
+/* Same angular spacing as dots: 51.43° intervals (360°/7) */
+/* Node width: 220px, positioned 40px outside circle border (190px radius) */
+/* Text flows outward, never intrudes into center area */
+
 .principle-node-1 {
-  top: 60px;
-  left: 50%;
+  top: 120px;
+  left: 450px;
   transform: translateX(-50%);
   text-align: center;
 }
 
-/* Node 2 - Top Right */
+/* 270° - Top - Text flows upward/outward */
+
 .principle-node-2 {
-  top: 230px;
-  left: 680px;
+  top: 200px;
+  left: 628px;
+  text-align: left;
 }
 
-/* Node 3 - Right */
+/* 321.43° - Top Right - Text flows rightward/outward */
+
 .principle-node-3 {
-  top: 480px;
-  left: 720px;
+  top: 380px;
+  left: 672px;
+  text-align: left;
 }
 
-/* Node 4 - Bottom Right */
+/* 12.86° - Right - Text flows rightward/outward */
+
 .principle-node-4 {
-  top: 700px;
-  left: 560px;
+  top: 525px;
+  left: 558px;
+  text-align: left;
 }
 
-/* Node 5 - Bottom Left */
+/* 64.29° - Bottom Right - Text flows downward/outward */
+
 .principle-node-5 {
-  top: 700px;
-  left: 140px;
+  top: 550px;
+  left: 375px;
+  transform: translateX(-100%);
+  text-align: right;
 }
 
-/* Node 6 - Left */
+/* 115.72° - Bottom Left - Text flows downward/outward */
+/* Positioned further right and down to prevent overlap with node-6 */
+
 .principle-node-6 {
-  top: 480px;
-  left: -20px;
+  top: 380px;
+  left: 228px;
+  transform: translateX(-100%);
+  text-align: right;
+  margin-bottom: 20px;
 }
 
-/* Node 7 - Top Left */
+/* 167.15° - Left - Text flows leftward/outward */
+
 .principle-node-7 {
-  top: 230px;
-  left: 50px;
+  top: 200px;
+  left: 272px;
+  transform: translateX(-100%);
+  text-align: right;
 }
+
+/* 218.58° - Top Left - Text flows leftward/outward */
 
 /* =========================================================
    Responsive - Tablet (Switch to Grid)
@@ -18940,14 +18939,6 @@ strong {
 @media (max-width: 991px) {
   .principles-cycle-section {
     padding: 90px 0 100px;
-  }
-
-  .principles-cycle-header {
-    margin-bottom: 50px;
-  }
-
-  .principles-title {
-    font-size: 32px;
   }
 
   /* Switch to grid layout on tablet */
@@ -18959,35 +18950,49 @@ strong {
     gap: 40px 50px;
   }
 
+  /* Hide all circular elements in grid view */
   .principles-circle-ring {
-    display: none;
+    display: none !important;
   }
 
   .circle-dot {
-    display: none;
+    display: none !important;
   }
 
   .principles-center-text {
-    display: none;
+    display: none !important;
   }
 
   .principle-node {
-    position: static;
+    position: static !important;
     width: 100%;
-    transform: none;
+    transform: none !important;
     text-align: left;
     padding-left: 24px;
     border-left: 2px solid rgba(214, 184, 132, 0.4);
+    top: auto !important;
+    left: auto !important;
+    margin-bottom: 24px;
+  }
+
+  /* Shift "Alignment as a Responsibility" to the right to prevent overlap */
+  .principle-node-5 {
+    margin-left: 40px;
+    padding-left: 24px;
   }
 
   .principle-node-title {
     font-size: 20px;
+    margin-bottom: 10px;
+    line-height: 1.35;
   }
 
   .principle-node-desc {
     opacity: 1;
     max-height: none;
     font-size: 15px;
+    line-height: 1.7;
+    color: #555555;
   }
 }
 
@@ -19000,13 +19005,6 @@ strong {
     padding: 70px 0 80px;
   }
 
-  .principles-cycle-header {
-    margin-bottom: 40px;
-  }
-
-  .principles-title {
-    font-size: 28px;
-  }
 
   .principles-cycle-wrapper {
     grid-template-columns: 1fr;
@@ -19019,12 +19017,14 @@ strong {
 
   .principle-node-title {
     font-size: 18px;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
+    line-height: 1.35;
   }
 
   .principle-node-desc {
     font-size: 14px;
-    line-height: 1.6;
+    line-height: 1.7;
+    color: #555555;
   }
 }
 
