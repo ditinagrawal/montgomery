@@ -18871,7 +18871,7 @@ strong {
 /* Text flows outward, never intrudes into center area */
 
 .principle-node-1 {
-  top: 120px;
+  top: -5px;
   left: 450px;
   transform: translateX(-50%);
   text-align: center;
@@ -18880,8 +18880,8 @@ strong {
 /* 270° - Top - Text flows upward/outward */
 
 .principle-node-2 {
-  top: 200px;
-  left: 628px;
+  top: 180px;
+  left: 650px;
   text-align: left;
 }
 
@@ -18889,15 +18889,15 @@ strong {
 
 .principle-node-3 {
   top: 380px;
-  left: 672px;
+  left: 660px;
   text-align: left;
 }
 
 /* 12.86° - Right - Text flows rightward/outward */
 
 .principle-node-4 {
-  top: 525px;
-  left: 558px;
+  top: 530px;
+  left: 538px;
   text-align: left;
 }
 
@@ -18924,8 +18924,8 @@ strong {
 /* 167.15° - Left - Text flows leftward/outward */
 
 .principle-node-7 {
-  top: 200px;
-  left: 272px;
+  top: 180px;
+  left: 250px;
   transform: translateX(-100%);
   text-align: right;
 }
