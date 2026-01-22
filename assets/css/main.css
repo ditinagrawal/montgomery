@@ -17872,7 +17872,7 @@ strong {
 
 .investment-framework-section {
   background-color: #f5f4f0;
-  padding: 100px 0;
+  /* Padding now handled by .page-section */
 }
 
 /* Institutional Framework Layout - Full Width */
@@ -18050,7 +18050,7 @@ strong {
 
 .investment-criteria-section {
   background-color: #ffffff;
-  padding: 100px 0;
+  /* Padding now handled by .page-section */
 }
 
 /* Header */
@@ -18529,7 +18529,7 @@ strong {
 
 .governance-section {
   background: #f5f4f0;
-  padding: 100px 0 110px;
+  /* Padding now handled by .page-section */
 }
 
 /* Header */
@@ -19038,7 +19038,7 @@ strong {
 
 .faq-section-premium {
   background-color: #ffffff;
-  padding: 110px 0 130px;
+  /* Padding now handled by .page-section */
 }
 
 /* Premium Accordion - Centered with balanced margins */
@@ -19192,4 +19192,187 @@ strong {
 
 /* =========================================================
    END FAQ PREMIUM
+   ========================================================= */
+
+/* =========================================================
+   UNIFIED DESIGN SYSTEM - STANDARDIZED ACROSS ALL PAGES
+   ========================================================= */
+
+/* Standardized Section Padding */
+.page-section {
+  padding: 90px 0;
+}
+
+/* Section Hierarchy - Visual Weight Control */
+.section-primary {
+  background-color: #ffffff;
+}
+
+.section-secondary {
+  background-color: #f5f4f0;
+}
+
+.section-tertiary {
+  background-color: #ffffff;
+  padding: 60px 0;
+}
+
+.section-tertiary.golden-band {
+  background-color: #cba96c;
+  padding: 90px 0;
+}
+
+.section-tertiary.golden-band .cta-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1.4;
+  color: #1C1C1C;
+  margin-bottom: 0;
+}
+
+@media (max-width: 992px) {
+  .section-tertiary.golden-band {
+    padding: 70px 0;
+  }
+  
+  .section-tertiary.golden-band .cta-header h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-tertiary.golden-band {
+    padding: 60px 0;
+  }
+  
+  .section-tertiary.golden-band .cta-header h2 {
+    font-size: 28px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 575px) {
+  .section-tertiary.golden-band {
+    padding: 50px 0;
+  }
+  
+  .section-tertiary.golden-band .cta-header h2 {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+}
+
+.section-dark {
+  background-color: #1C1C1C;
+  color: #ffffff;
+}
+
+/* Consolidated Typography Hierarchy */
+.heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 38px;
+  margin-bottom: 20px;
+  color: #1C1C1C;
+}
+
+.section-dark .heading {
+  color: #ffffff;
+}
+
+.subheading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+.subheading.tagline {
+  color: #D6B884 !important;
+  font-style: italic;
+}
+
+.body-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.section-dark .body-text {
+  color: #ffffff;
+}
+
+/* Container Standardization - Ensure consistent max-width */
+.container {
+  max-width: 1140px;
+}
+
+/* Responsive Typography */
+@media (max-width: 992px) {
+  .heading {
+    font-size: 32px;
+  }
+  
+  .subheading {
+    font-size: 22px;
+  }
+  
+  .body-text {
+    font-size: 16px;
+  }
+  
+  .page-section {
+    padding: 70px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 28px;
+  }
+  
+  .subheading {
+    font-size: 20px;
+  }
+  
+  .body-text {
+    font-size: 16px;
+  }
+  
+  .page-section {
+    padding: 60px 0;
+  }
+  
+  .section-tertiary {
+    padding: 50px 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .heading {
+    font-size: 24px;
+  }
+  
+  .subheading {
+    font-size: 18px;
+  }
+  
+  .body-text {
+    font-size: 15px;
+  }
+  
+  .page-section {
+    padding: 50px 0;
+  }
+  
+  .section-tertiary {
+    padding: 40px 0;
+  }
+}
+
+/* =========================================================
+   END UNIFIED DESIGN SYSTEM
    ========================================================= */
