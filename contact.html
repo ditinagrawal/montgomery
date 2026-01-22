@@ -22,6 +22,369 @@
     <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.css">
     <link rel="stylesheet" href="assets/css/main.css">
 
+    <!--===== UNIFIED LAYOUT SYSTEM - PAGE 3 =======-->
+    <style>
+      /* ============================================
+         PAGE 3 - UNIFIED CONTENT FRAME & SPACING
+         Follows same system as Page 1 & 2
+         ============================================ */
+      
+      :root {
+        /* Content Frame - Same as Page 1 & 2 */
+        --content-max-width: 1140px;
+        --content-horizontal-padding: 15px;
+        
+        /* Vertical Spacing - Consistent with Page 2 */
+        --section-padding-top: 65px;
+        --section-padding-bottom: 65px;
+        
+        /* Typography Spacing */
+        --heading-to-tagline: 1.25rem;
+        --tagline-to-content: 1.75rem;
+        --heading-to-content: 2rem;
+      }
+
+      /* ============================================
+         UNIFIED CONTAINER FRAME
+         ============================================ */
+      
+      .container {
+        max-width: var(--content-max-width) !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: var(--content-horizontal-padding) !important;
+        padding-right: var(--content-horizontal-padding) !important;
+      }
+
+      /* ============================================
+         HERO SECTION - REFINED & INTENTIONAL
+         ============================================ */
+      
+      .contact-banner {
+        position: relative !important;
+        width: 100% !important;
+        min-height: 45vh !important;  /* Reduced from 60vh */
+        margin-top: 80px !important;
+        background: url('assets/img/mumbai-skyline.png') center center/cover no-repeat !important;
+        display: flex !important;
+        align-items: flex-end !important;  /* Align to bottom */
+        justify-content: flex-start !important;  /* Align left */
+        overflow: hidden !important;
+      }
+      
+      /* Dark gradient overlay for depth and contrast */
+      .contact-banner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.2) 0%,
+          rgba(0, 0, 0, 0.4) 50%,
+          rgba(0, 0, 0, 0.6) 100%
+        );
+        z-index: 1;
+      }
+      
+      /* Hero content container */
+      .contact-banner .container {
+        position: relative !important;
+        z-index: 2 !important;
+        padding: 0 var(--content-horizontal-padding) 60px var(--content-horizontal-padding) !important;  /* Bottom padding, left aligned */
+        text-align: left !important;  /* Left align */
+        width: 100% !important;
+        max-width: var(--content-max-width) !important;
+      }
+      
+      /* Heading - anchored to grid */
+      .contact-banner .heading {
+        color: #ffffff !important;
+        font-size: 38px !important;  /* Match Page 1 heading size */
+        font-weight: 800 !important;  /* Match Page 1 weight */
+        letter-spacing: -0.02em !important;  /* Match Page 1 tracking */
+        margin-bottom: 0 !important;
+        text-align: left !important;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      /* ============================================
+         GET IN TOUCH SECTION - TIGHTENED & BALANCED
+         ============================================ */
+      
+      .page-section.section-primary {
+        padding-top: var(--section-padding-top) !important;
+        padding-bottom: var(--section-padding-bottom) !important;
+      }
+      
+      /* Tighten vertical spacing */
+      .page-section.section-primary .col-lg-6 h2.heading {
+        margin-bottom: 30px !important;  /* Reduced from 40px */
+      }
+      
+      /* Consistent spacing for contact detail blocks */
+      .page-section.section-primary .col-lg-6:first-child > div {
+        margin-bottom: 28px !important;  /* Reduced from 35px */
+      }
+      
+      .page-section.section-primary .col-lg-6:first-child > div:last-child {
+        margin-bottom: 0 !important;
+      }
+      
+      /* Contact detail headings */
+      .page-section.section-primary .col-lg-6:first-child h4 {
+        font-family: 'Playfair Display', serif !important;
+        font-size: 1.3rem !important;
+        color: #1C1C1C !important;
+        margin: 0 0 10px 0 !important;
+        font-weight: 700 !important;
+      }
+      
+      /* Contact detail links */
+      .page-section.section-primary .col-lg-6:first-child a {
+        color: #333 !important;
+        text-decoration: none !important;
+        transition: color 0.3s ease !important;
+      }
+      
+      .page-section.section-primary .col-lg-6:first-child a:hover {
+        color: #D6B884 !important;
+      }
+      
+      /* Improve alignment between columns */
+      .page-section.section-primary .row {
+        align-items: flex-start !important;
+      }
+      
+      .page-section.section-primary .col-lg-6:first-child {
+        padding-right: 30px !important;
+      }
+      
+      .page-section.section-primary .col-lg-6:last-child {
+        padding-left: 30px !important;
+      }
+
+      /* ============================================
+         FORM - SOFTER, REFINED TREATMENT
+         ============================================ */
+      
+      .form-wrapper {
+        padding: 0 !important;
+      }
+      
+      .form-wrapper h2.heading {
+        margin-bottom: 12px !important;  /* Reduced from default */
+      }
+      
+      .form-wrapper p {
+        margin-bottom: 28px !important;  /* Reduced spacing */
+        font-size: 0.95rem !important;
+        color: #666 !important;
+      }
+      
+      /* Softer form inputs */
+      .contact-input {
+        border: 1px solid #e0e0e0 !important;  /* Lighter border */
+        border-radius: 6px !important;  /* Slightly rounded */
+        padding: 14px 16px !important;  /* More breathing space */
+        font-size: 0.95rem !important;
+        background: #ffffff !important;
+        font-family: 'Inter', sans-serif !important;
+        color: #333 !important;
+        transition: all 0.3s ease !important;
+        width: 100% !important;
+      }
+      
+      /* Consistent spacing between form fields */
+      .form-wrapper form > div {
+        margin-bottom: 20px !important;  /* More space between fields */
+      }
+      
+      .form-wrapper form > div:last-of-type {
+        margin-bottom: 0 !important;
+      }
+      
+      /* Textarea specific styling */
+      .contact-input[rows] {
+        resize: vertical !important;
+        min-height: 100px !important;
+      }
+      
+      .contact-input:focus {
+        box-shadow: 0 0 0 3px rgba(214, 184, 132, 0.1) !important;  /* Subtle gold focus */
+        border-color: #D6B884 !important;
+        background: #ffffff !important;
+        outline: none !important;
+      }
+      
+      .contact-input::placeholder {
+        color: #999 !important;
+      }
+      
+      /* Form labels */
+      .form-label {
+        font-family: 'Inter', sans-serif !important;
+        font-size: 0.9rem !important;
+        color: #333 !important;
+        font-weight: 500 !important;
+        margin-bottom: 10px !important;  /* Slightly more space */
+        display: block !important;
+      }
+      
+      /* Gold CTA button - reduced height */
+      .contact-submit-btn {
+        background: #D6B884 !important;  /* Gold instead of black */
+        color: #1C1C1C !important;
+        border: none !important;
+        padding: 12px 35px !important;  /* Reduced from 14px */
+        border-radius: 6px !important;
+        font-size: 0.95rem !important;
+        font-weight: 600 !important;
+        font-family: 'Inter', sans-serif !important;
+        transition: all 0.3s ease !important;
+        width: 100% !important;
+        cursor: pointer !important;
+        margin-top: 8px !important;
+      }
+      
+      .contact-submit-btn:hover {
+        background: #C9A765 !important;
+        color: #1C1C1C !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 4px 12px rgba(214, 184, 132, 0.3) !important;
+      }
+
+      /* ============================================
+         SECTION SEPARATION & FLOW
+         ============================================ */
+      
+      /* Visual separation between contact and map */
+      .page-section.section-primary {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+        padding-bottom: calc(var(--section-padding-bottom) + 20px) !important;
+      }
+      
+      /* Map section - visual buffer above */
+      .map-section {
+        padding: 0 !important;
+        width: 100% !important;
+        position: relative !important;
+      }
+      
+      .map-section::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 40px;
+        background: linear-gradient(to bottom, #f5f4f0, #ffffff);
+      }
+      
+      .map-section iframe {
+        border: 0 !important;
+        display: block !important;
+        width: 100% !important;
+        height: 500px !important;
+      }
+      
+      /* Visual separation before disclaimer */
+      .map-section::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 40px;
+        background: linear-gradient(to bottom, #ffffff, #f5f4f0);
+      }
+      
+      /* Disclaimer section */
+      .page-section.section-secondary {
+        padding-top: var(--section-padding-top) !important;
+        padding-bottom: var(--section-padding-bottom) !important;
+        background-color: #f5f4f0 !important;
+      }
+
+      /* ============================================
+         DISCLAIMER - REFINED TYPOGRAPHY & HIERARCHY
+         ============================================ */
+      
+      .page-section.section-secondary .container {
+        max-width: 800px !important;  /* Reduced line length for readability */
+      }
+      
+      .page-section.section-secondary .heading {
+        font-size: 32px !important;
+        font-weight: 700 !important;
+        margin-bottom: 35px !important;
+        text-align: center !important;
+      }
+      
+      /* Improved text spacing and hierarchy */
+      .page-section.section-secondary p {
+        font-family: 'Inter', sans-serif !important;
+        font-size: 16px !important;  /* Slightly larger */
+        line-height: 1.85 !important;  /* Increased from 1.9 for lighter feel */
+        color: #333 !important;
+        margin-bottom: 28px !important;  /* Increased spacing between paragraphs */
+        max-width: 100% !important;
+      }
+      
+      .page-section.section-secondary p:last-child {
+        margin-bottom: 0 !important;
+      }
+      
+      /* Links in disclaimer */
+      .page-section.section-secondary a {
+        color: #1C1C1C !important;
+        text-decoration: underline !important;
+        text-underline-offset: 3px !important;
+        transition: color 0.3s ease !important;
+      }
+      
+      .page-section.section-secondary a:hover {
+        color: #D6B884 !important;
+      }
+
+      /* ============================================
+         RESPONSIVE ADJUSTMENTS
+         ============================================ */
+      
+      @media (max-width: 992px) {
+        .contact-banner {
+          min-height: 40vh !important;
+        }
+        
+        .contact-banner .heading {
+          font-size: 34px !important;
+        }
+        
+        .page-section.section-primary .col-lg-6:first-child,
+        .page-section.section-primary .col-lg-6:last-child {
+          padding-left: 15px !important;
+          padding-right: 15px !important;
+          margin-bottom: 40px !important;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .contact-banner {
+          min-height: 35vh !important;
+        }
+        
+        .contact-banner .heading {
+          font-size: 30px !important;
+        }
+        
+        .map-section iframe {
+          height: 400px !important;
+        }
+        
+        .page-section.section-secondary .container {
+          max-width: 100% !important;
+        }
+      }
+    </style>
+
     <!--=====  JS SCRIPT LINK =======-->
     <script src="assets/js/plugins/jquery-3-7-1.min.js"></script>
 	
@@ -131,12 +494,9 @@
 <!-- ALL CONTENT HERE -->
 
 <!-- ================= HERO BANNER ================= -->
-<section class="contact-banner" style="position: relative; width: 100%; min-height: 60vh; margin-top: 80px; background: url('assets/img/mumbai-skyline.png') center center/cover no-repeat; display: flex; align-items: center; justify-content: center;">
-  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3);"></div>
-  <div class="container" style="position: relative; z-index: 2; padding: 90px 20px;">
-    <div style="text-align: center;">
-      <h1 class="heading" style="color: #fff!important; margin-bottom: 0;">CONTACT US</h1>
-    </div>
+<section class="contact-banner">
+  <div class="container">
+    <h1 class="heading">CONTACT US</h1>
   </div>
 </section>
 
@@ -147,9 +507,9 @@
       
       <!-- Left Column - Contact Details (Editorial Style) -->
       <div class="col-lg-6">
-        <h2 class="heading" style="margin-bottom: 40px;">GET IN TOUCH</h2>
+        <h2 class="heading">GET IN TOUCH</h2>
         
-        <div style="margin-bottom: 35px;">
+        <div>
           <h4 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #1C1C1C; margin: 0 0 10px 0; font-weight: 700;">Registered Office</h4>
           <p class="body-text" style="margin-bottom: 0;">
             607, Sunshine Building No. T-39, Shastri Nagar, Lokhandwala,<br>
@@ -157,7 +517,7 @@
           </p>
         </div>
 
-        <div style="margin-bottom: 35px;">
+        <div>
           <h4 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #1C1C1C; margin: 0 0 10px 0; font-weight: 700;">Communication Office</h4>
           <p class="body-text" style="margin-bottom: 0;">
             2412, 24th Floor, Parinee I, Shah Industrial Estate,<br>
@@ -165,21 +525,21 @@
           </p>
         </div>
 
-        <div style="margin-bottom: 35px;">
+        <div>
           <h4 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #1C1C1C; margin: 0 0 10px 0; font-weight: 700;">Phone</h4>
           <p class="body-text" style="margin-bottom: 0;">
             <a href="tel:+912246644111" style="color: #333; text-decoration: none;">+91 22 4664 4111</a>
           </p>
         </div>
 
-        <div style="margin-bottom: 35px;">
+        <div>
           <h4 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #1C1C1C; margin: 0 0 10px 0; font-weight: 700;">Email</h4>
           <p class="body-text" style="margin-bottom: 0;">
             <a href="mailto:communication@mgcap.in" style="color: #333; text-decoration: none;">communication@mgcap.in</a>
           </p>
         </div>
 
-        <div style="margin-bottom: 0;">
+        <div>
           <h4 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #1C1C1C; margin: 0 0 10px 0; font-weight: 700;">Website</h4>
           <p class="body-text" style="margin-bottom: 0;">
             <a href="https://www.mgcap.in" target="_blank" style="color: #333; text-decoration: none;">www.mgcap.in</a>
@@ -189,33 +549,33 @@
 
       <!-- Right Column - Contact Form -->
       <div class="col-lg-6">
-        <div class="form-wrapper" style="padding: 0;">
-          <h2 class="heading" style="margin-bottom: 10px;">INVESTOR ENQUIRIES</h2>
-          <p style="font-family: 'Inter', sans-serif; font-size: 0.95rem; color: #666; margin-bottom: 30px; line-height: 1.6;">For investment-related queries and official communication</p>
+        <div class="form-wrapper">
+          <h2 class="heading">INVESTOR ENQUIRIES</h2>
+          <p>For investment-related queries and official communication</p>
           
           <form id="contactForm">
-            <div class="mb-4">
-              <label for="name" class="form-label" style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: #333; font-weight: 500; margin-bottom: 8px; display: block;">Name*</label>
+            <div>
+              <label for="name" class="form-label">Name*</label>
               <input type="text" class="form-control contact-input" id="name" name="name" required>
             </div>
             
-            <div class="mb-4">
-              <label for="email" class="form-label" style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: #333; font-weight: 500; margin-bottom: 8px; display: block;">Email*</label>
+            <div>
+              <label for="email" class="form-label">Email*</label>
               <input type="email" class="form-control contact-input" id="email" name="email" required>
             </div>
             
-            <div class="mb-4">
-              <label for="phone" class="form-label" style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: #333; font-weight: 500; margin-bottom: 8px; display: block;">Phone*</label>
+            <div>
+              <label for="phone" class="form-label">Phone*</label>
               <input type="tel" class="form-control contact-input" id="phone" name="phone" required>
             </div>
             
-            <div class="mb-4">
-              <label for="subject" class="form-label" style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: #333; font-weight: 500; margin-bottom: 8px; display: block;">Subject*</label>
+            <div>
+              <label for="subject" class="form-label">Subject*</label>
               <input type="text" class="form-control contact-input" id="subject" name="subject" required>
             </div>
             
-            <div class="mb-4">
-              <label for="message" class="form-label" style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: #333; font-weight: 500; margin-bottom: 8px; display: block;">Message</label>
+            <div>
+              <label for="message" class="form-label">Message</label>
               <textarea class="form-control contact-input" id="message" name="message" rows="4"></textarea>
             </div>
             
@@ -230,112 +590,35 @@
   </div>
 </section>
 
-<style>
-  /* Typography now handled by unified design system in main.css */
-  
-  .contact-card:hover {
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-  transform: translateY(-3px);
-  transition: all 0.3s ease;
-}
-.contact-card {
-  transition: all 0.3s ease;
-}
-.contact-card a:hover {
-  color: #D6B884 !important;
-}
-</style>
 
 <!-- ================= FULL-WIDTH MAP SECTION ================= -->
-<section class="map-section" style="padding: 0; width: 100%;">
-  <div style="width: 100%; height: 500px;">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.2899!2d72.8341!3d19.1286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9c676018b43%3A0x75f29a4205098f99!2sParinee%20I%2C%20Shah%20Industrial%20Estate%2C%20Andheri%20West%2C%20Mumbai%2C%20Maharashtra%20400053!5e0!3m2!1sen!2sin!4v1702900000000!5m2!1sen!2sin" 
-      width="100%" 
-      height="100%" 
-      style="border:0; display: block;" 
-      allowfullscreen="" 
-      loading="lazy" 
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
+<section class="map-section">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.2899!2d72.8341!3d19.1286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9c676018b43%3A0x75f29a4205098f99!2sParinee%20I%2C%20Shah%20Industrial%20Estate%2C%20Andheri%20West%2C%20Mumbai%2C%20Maharashtra%20400053!5e0!3m2!1sen!2sin!4v1702900000000!5m2!1sen!2sin" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
 </section>
 
-<style>
-/* Contact Form Styles - Institutional and Professional */
-.contact-input {
-  border: 1px solid #ddd;
-  border-radius: 0;
-  padding: 12px 15px;
-  font-size: 0.95rem;
-  background: #fff;
-  font-family: 'Inter', sans-serif;
-  color: #333;
-  transition: border-color 0.3s ease;
-  width: 100%;
-}
-
-.contact-input:focus {
-  box-shadow: none;
-  border-color: #1C1C1C;
-  background: #fff;
-  outline: none;
-}
-
-.contact-input::placeholder {
-  color: #999;
-}
-
-.contact-submit-btn {
-  background: #1C1C1C;
-  color: #fff;
-  border: none;
-  padding: 14px 35px;
-  border-radius: 0;
-  font-size: 0.95rem;
-  font-weight: 500;
-  font-family: 'Inter', sans-serif;
-  transition: all 0.3s ease;
-  width: 100%;
-  cursor: pointer;
-}
-
-.contact-submit-btn:hover {
-  background: #333;
-  color: #fff;
-}
-
-@media (max-width: 991px) {
-  .map-section {
-    height: 400px !important;
-  }
-  .map-section iframe {
-    height: 400px !important;
-  }
-}
-</style>
 
 <!-- ================= DETAILED DISCLAIMER SECTION ================= -->
 <section class="page-section section-secondary">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <h3 class="heading" style="font-size: 32px; margin-bottom: 40px; text-align: center;">DETAILED DISCLAIMER</h3>
-        
-        <div style="font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.9; color: #333;">
-          <p style="margin-bottom: 25px;">
-            This website is intended for informational purposes only and does not constitute an offer to sell or a solicitation to buy units of Montgomery Capital Fund 1. Access is restricted to persons eligible to invest under the SEBI (Alternative Investment Funds) Regulations, 2012.
-          </p>
-          
-          <p style="margin-bottom: 25px;">
-            Investments in securities markets are subject to market, liquidity, and regulatory risks. Returns are not assured or guaranteed, and past performance may not be indicative of future results.
-          </p>
-          
-          <p style="margin-bottom: 0;">
-            By accessing this website, you confirm that you are an eligible investor and agree to the <a href="#" style="color: #333; text-decoration: underline; text-underline-offset: 2px;">Terms of Use</a> and <a href="#" style="color: #333; text-decoration: underline; text-underline-offset: 2px;">Privacy Policy</a>.
-          </p>
-        </div>
-      </div>
+    <h3 class="heading">DETAILED DISCLAIMER</h3>
+    
+    <div>
+      <p>
+        This website is intended for informational purposes only and does not constitute an offer to sell or a solicitation to buy units of Montgomery Capital Fund 1. Access is restricted to persons eligible to invest under the SEBI (Alternative Investment Funds) Regulations, 2012.
+      </p>
+      
+      <p>
+        Investments in securities markets are subject to market, liquidity, and regulatory risks. Returns are not assured or guaranteed, and past performance may not be indicative of future results.
+      </p>
+      
+      <p>
+        By accessing this website, you confirm that you are an eligible investor and agree to the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
+      </p>
     </div>
   </div>
 </section>
