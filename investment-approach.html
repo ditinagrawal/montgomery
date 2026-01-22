@@ -22,6 +22,547 @@
     <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.css">
     <link rel="stylesheet" href="assets/css/main.css">
 
+    <!--===== UNIFIED LAYOUT SYSTEM - PAGE 2 =======-->
+    <style>
+      /* ============================================
+         PAGE 2 - UNIFIED CONTENT FRAME & SPACING
+         Follows same system as Page 1 with adjustments
+         ============================================ */
+      
+      :root {
+        /* Content Frame - Same as Page 1 */
+        --content-max-width: 1140px;
+        --content-horizontal-padding: 15px;
+        
+        /* Vertical Spacing - Reduced by 15-20% from Page 1 */
+        --section-padding-top: 65px;      /* was 80px, reduced by ~19% */
+        --section-padding-bottom: 65px;   /* was 80px, reduced by ~19% */
+        --section-gap: 0px;
+        
+        /* Typography Spacing - Same rhythm as Page 1 */
+        --heading-to-tagline: 1.25rem;
+        --tagline-to-content: 1.75rem;
+        --heading-to-content: 2rem;
+        
+        /* Progressive density reduction approaching footer */
+        --section-density-base: 1;
+        --section-density-reduced: 0.85;
+        --section-density-minimal: 0.7;
+      }
+
+      /* ============================================
+         UNIFIED CONTAINER FRAME
+         ============================================ */
+      
+      /* All containers use same max-width and padding */
+      .container {
+        max-width: var(--content-max-width) !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: var(--content-horizontal-padding) !important;
+        padding-right: var(--content-horizontal-padding) !important;
+      }
+
+      /* ============================================
+         SECTION PADDING - REDUCED & HIERARCHICAL
+         ============================================ */
+      
+      /* Unified section padding - consistent rhythm */
+      .page-section {
+        padding-top: var(--section-padding-top) !important;
+        padding-bottom: var(--section-padding-bottom) !important;
+      }
+      
+      /* Investment Framework - leading section */
+      .investment-framework-section {
+        padding-top: var(--section-padding-top) !important;
+        padding-bottom: var(--section-padding-bottom) !important;
+      }
+      
+      /* Investment Criteria - leading section */
+      .investment-criteria-section {
+        padding-top: var(--section-padding-top) !important;
+        padding-bottom: var(--section-padding-bottom) !important;
+      }
+      
+      /* Portfolio Approach - supporting role */
+      .portfolio-approach-section {
+        padding-top: var(--section-padding-top) !important;
+        padding-bottom: var(--section-padding-bottom) !important;
+      }
+      
+      /* Governance - supporting role */
+      .governance-section {
+        padding-top: var(--section-padding-top) !important;
+        padding-bottom: var(--section-padding-bottom) !important;
+      }
+      
+      /* Core Principles - supporting role */
+      .principles-cycle-section {
+        padding-top: var(--section-padding-top) !important;
+        padding-bottom: var(--section-padding-bottom) !important;
+      }
+      
+      /* FAQ - minimal density approaching footer */
+      .faq-section-premium {
+        padding-top: calc(var(--section-padding-top) * 0.8) !important;
+        padding-bottom: calc(var(--section-padding-bottom) * 0.8) !important;
+      }
+
+      /* ============================================
+         TYPOGRAPHY SPACING - UNIFIED
+         ============================================ */
+      
+      /* Remove inconsistent spacing utilities */
+      .space20,
+      .space32 {
+        margin-bottom: 0 !important;
+        display: none !important;
+      }
+      
+      /* Heading to Tagline spacing */
+      .heading + .subheading.tagline,
+      .heading + .tagline {
+        margin-top: var(--heading-to-tagline) !important;
+        margin-bottom: 0 !important;
+      }
+      
+      /* Tagline to Content spacing */
+      .subheading.tagline + *:not(.heading):not(.subheading),
+      .tagline + p,
+      .tagline + .framework-institutional,
+      .tagline + .criteria-grid,
+      .tagline + .portfolio-pillars,
+      .tagline + .governance-pillars {
+        margin-top: var(--tagline-to-content) !important;
+      }
+      
+      /* Heading to Content (when no tagline) */
+      .heading + p:not(.tagline),
+      .heading + .framework-institutional,
+      .heading + .criteria-grid,
+      .heading + .portfolio-pillars {
+        margin-top: var(--heading-to-content) !important;
+      }
+
+      /* ============================================
+         VISUAL HIERARCHY - LEADING VS SUPPORTING
+         ============================================ */
+      
+      /* Leading sections - full treatment */
+      .investment-framework-section .heading,
+      .investment-criteria-section .heading {
+        font-size: 36px !important;
+        font-weight: 800 !important;
+        margin-bottom: var(--heading-to-tagline) !important;
+      }
+      
+      /* Supporting sections - reduced emphasis */
+      .portfolio-approach-section .heading,
+      .governance-section .heading,
+      .principles-cycle-section .heading {
+        font-size: 32px !important;
+        font-weight: 700 !important;
+        margin-bottom: var(--heading-to-tagline) !important;
+      }
+      
+      /* Minimal sections - subtle treatment */
+      .faq-section-premium .heading {
+        font-size: 28px !important;
+        font-weight: 700 !important;
+        margin-bottom: var(--heading-to-tagline) !important;
+      }
+      
+
+      /* ============================================
+         PROGRESSIVE DENSITY REDUCTION
+         ============================================ */
+      
+      /* Framework steps - reduced spacing for continuous flow */
+      .framework-step {
+        padding: 30px 0 !important;  /* Reduced from 50px for continuous process */
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+      }
+      
+      .framework-step:last-child {
+        border-bottom: none !important;
+      }
+      
+      /* Framework step spacing - tighter for continuous reading */
+      .framework-institutional {
+        gap: 0 !important;  /* Remove gaps between steps */
+      }
+      
+      /* Criteria cards - full density */
+      .criteria-card {
+        padding: 2rem 1.2rem !important;
+      }
+      
+      /* Portfolio pillars - slightly reduced */
+      .portfolio-pillar {
+        padding: 40px 0 !important;
+      }
+      
+      /* Governance pillars - further reduced */
+      .governance-pillar {
+        padding: 35px 0 !important;
+      }
+      
+      /* FAQ items - minimal density */
+      .accordion-item {
+        margin-bottom: 12px !important;
+      }
+      
+      /* ============================================
+         CORE PRINCIPLES - LOGO & DOTS
+         ============================================ */
+      
+      /* Logo at center */
+      .principles-center-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      /* Increase dot size for better visual balance */
+      .circle-dot {
+        width: 10px !important;  /* Increased from default */
+        height: 10px !important;  /* Increased from default */
+        background-color: #D6B884 !important;
+        border-radius: 50% !important;
+        position: absolute !important;
+      }
+      
+      /* ============================================
+         GOVERNANCE - REMOVE NUMBERING
+         ============================================ */
+      
+      /* Hide governance numbering */
+      .governance-number {
+        display: none !important;
+      }
+      
+      /* ============================================
+         FAQ - SOFTER, MORE FLUID DESIGN
+         ============================================ */
+      
+      /* Softer accordion design */
+      .faq-accordion-premium .accordion-item {
+        background: transparent !important;
+        border: none !important;
+        margin-bottom: 16px !important;
+        border-radius: 12px !important;
+        overflow: hidden !important;
+      }
+      
+      .faq-accordion-premium .accordion-button {
+        background-color: #faf9f7 !important;  /* Softer background */
+        border: 1px solid rgba(214, 184, 132, 0.15) !important;  /* Lighter border */
+        border-radius: 12px !important;  /* Rounded corners */
+        padding: 24px 28px !important;
+        min-height: auto !important;
+        font-family: 'Playfair Display', serif !important;
+        font-size: 20px !important;
+        font-weight: 600 !important;
+        color: #1a1a1a !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03) !important;  /* Subtle shadow */
+      }
+      
+      .faq-accordion-premium .accordion-button:hover {
+        background-color: #f5f4f0 !important;
+        border-color: rgba(214, 184, 132, 0.25) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+        transform: translateY(-1px) !important;
+      }
+      
+      .faq-accordion-premium .accordion-button:not(.collapsed) {
+        background-color: #f5f4f0 !important;
+        border-color: rgba(214, 184, 132, 0.3) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+      }
+      
+      .faq-accordion-premium .accordion-button:focus {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+        border-color: rgba(214, 184, 132, 0.3) !important;
+      }
+      
+      /* Softer answer panel */
+      .faq-accordion-premium .accordion-body {
+        background-color: #faf9f7 !important;  /* Lighter background */
+        color: #333333 !important;  /* Darker text for readability */
+        font-family: 'Inter', sans-serif !important;
+        font-size: 16px !important;
+        line-height: 1.7 !important;
+        padding: 24px 28px 28px !important;
+        border-top: 1px solid rgba(214, 184, 132, 0.15) !important;
+        border-radius: 0 0 12px 12px !important;
+      }
+      
+      /* Softer chevron */
+      .faq-accordion-premium .accordion-button::after {
+        opacity: 0.5 !important;
+        transition: all 0.3s ease !important;
+      }
+      
+      .faq-accordion-premium .accordion-button:hover::after {
+        opacity: 0.8 !important;
+      }
+      
+      .faq-accordion-premium .accordion-button:not(.collapsed)::after {
+        opacity: 0.8 !important;
+      }
+
+      /* ============================================
+         HOVER INTERACTION CUES
+         ============================================ */
+      
+      /* Criteria cards - subtle hover indicator */
+      .criteria-card {
+        position: relative;
+        transition: all 0.3s ease;
+      }
+      
+      .criteria-card::before {
+        content: '';
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 6px;
+        height: 6px;
+        background-color: #D6B884;
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      
+      .criteria-card:hover::before {
+        opacity: 0.4;
+      }
+      
+      .criteria-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+      
+      /* Framework steps - subtle expand hint */
+      .framework-step {
+        position: relative;
+        transition: all 0.3s ease;
+      }
+      
+      .framework-step::after {
+        content: '→';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #D6B884;
+        opacity: 0;
+        font-size: 18px;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+      
+      .framework-step:hover::after {
+        opacity: 0.3;
+        transform: translateY(-50%) translateX(-5px);
+      }
+      
+      /* Portfolio pillars - interaction hint */
+      .portfolio-pillar {
+        position: relative;
+        transition: all 0.3s ease;
+      }
+      
+      .portfolio-pillar::before {
+        content: '⋯';
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        color: #D6B884;
+        opacity: 0;
+        font-size: 20px;
+        transition: opacity 0.3s ease;
+      }
+      
+      .portfolio-pillar:hover::before {
+        opacity: 0.25;
+      }
+      
+      /* FAQ accordion - always visible interaction cue */
+      .accordion-button::after {
+        opacity: 0.6;
+        transition: opacity 0.3s ease;
+      }
+      
+      .accordion-button:hover::after {
+        opacity: 1;
+      }
+      
+      .accordion-button:not(.collapsed)::after {
+        opacity: 1;
+      }
+
+      /* ============================================
+         HERO SECTION - ALIGNED WITH CONTENT FRAME
+         ============================================ */
+      
+      .hero-title-card {
+        max-width: var(--content-max-width) !important;
+        margin: 0 auto !important;
+        padding-left: var(--content-horizontal-padding) !important;
+        padding-right: var(--content-horizontal-padding) !important;
+        padding-top: var(--section-padding-top) !important;  /* Aligned with section padding */
+        padding-bottom: var(--section-padding-bottom) !important;  /* Aligned with section padding */
+        min-height: auto !important;  /* Remove fixed height */
+      }
+      
+      .hero-title {
+        font-size: 38px !important;  /* Match Page 1 heading size */
+        font-weight: 800 !important;  /* Match Page 1 heading weight */
+        margin-bottom: var(--heading-to-tagline) !important;  /* Use unified spacing */
+        letter-spacing: -0.02em !important;  /* Match Page 1 tracking */
+      }
+      
+      .hero-subline {
+        font-size: clamp(16px, 1.9vw, 18px) !important;  /* Slightly larger for hierarchy */
+        line-height: 1.6 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
+
+      /* ============================================
+         BACKGROUND ALTERNATION - CLEAR SECTION SEPARATION
+         ============================================ */
+      
+      /* Ensure proper background alternation */
+      .section-primary {
+        background-color: #ffffff !important;
+      }
+      
+      .section-secondary {
+        background-color: #f5f4f0 !important;
+      }
+      
+      /* Dark hero section */
+      .investment-approach.dark-section {
+        background-color: #1C1C1C !important;
+      }
+      
+      /* Ensure sections alternate properly */
+      .investment-framework-section.section-secondary {
+        background-color: #f5f4f0 !important;
+      }
+      
+      .investment-criteria-section.section-primary {
+        background-color: #ffffff !important;
+      }
+      
+      .portfolio-approach-section.section-secondary {
+        background-color: #f5f4f0 !important;
+      }
+      
+      .governance-section.section-primary {
+        background-color: #ffffff !important;
+      }
+      
+      .principles-cycle-section.section-secondary {
+        background-color: #f5f4f0 !important;
+      }
+      
+      .faq-section-premium.section-secondary {
+        background-color: #f5f4f0 !important;
+      }
+
+      /* ============================================
+         RESPONSIVE ADJUSTMENTS
+         ============================================ */
+      
+      @media (max-width: 992px) {
+        :root {
+          --section-padding-top: 50px;
+          --section-padding-bottom: 50px;
+        }
+        
+        .hero-title-card {
+          padding-top: var(--section-padding-top) !important;
+          padding-bottom: var(--section-padding-bottom) !important;
+        }
+        
+        .hero-title {
+          font-size: 34px !important;
+        }
+        
+        .framework-step {
+          padding: 25px 0 !important;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        :root {
+          --section-padding-top: 40px;
+          --section-padding-bottom: 40px;
+        }
+        
+        .hero-title-card {
+          padding-top: var(--section-padding-top) !important;
+          padding-bottom: var(--section-padding-bottom) !important;
+        }
+        
+        .hero-title {
+          font-size: 30px !important;
+        }
+        
+        .framework-step {
+          padding: 20px 0 !important;
+        }
+      }
+      
+      /* ============================================
+         GOLD BAND - REDUCED VISUAL WEIGHT (Same as Page 1)
+         ============================================ */
+      
+      .section-tertiary.golden-band {
+        padding: 50px 0 !important;
+        background-color: #D6B884 !important;
+      }
+      
+      .section-tertiary.golden-band .cta-header h2 {
+        font-size: 32px !important;
+        line-height: 1.4 !important;
+        margin-bottom: 0 !important;
+      }
+      
+      .section-tertiary.golden-band .space32 {
+        display: none !important;
+      }
+      
+      @media (max-width: 768px) {
+        .section-tertiary.golden-band {
+          padding: 40px 0 !important;
+        }
+        
+        .section-tertiary.golden-band .cta-header h2 {
+          font-size: 28px !important;
+        }
+      }
+      
+      @media (max-width: 575px) {
+        .section-tertiary.golden-band {
+          padding: 35px 0 !important;
+        }
+        
+        .section-tertiary.golden-band .cta-header h2 {
+          font-size: 24px !important;
+        }
+      }
+    </style>
+
     <!--=====  JS SCRIPT LINK =======-->
     <script src="assets/js/plugins/jquery-3-7-1.min.js"></script>
 	
@@ -411,11 +952,7 @@
     <!-- Section Header -->
     <div class="portfolio-header">
       <h2 class="heading">PORTFOLIO APPROACH</h2>
-      <div class="space20"></div>
-      <p class="portfolio-intro">
-        Our portfolio is built around a simple idea: stay anchored to long-term compounding, while remaining flexible enough to participate in opportunities where quality and visibility are clear.
-        Each bucket serves a defined role, and together they create a balanced, disciplined, and resilient portfolio.
-      </p>
+      <h3 class="subheading tagline" style="color:#D6B884 !important;">Structured for compounding, selective in participation</h3>
     </div>
 
     <!-- Four Pillar Architecture -->
@@ -473,20 +1010,13 @@
 
 
 <!--===== RISK & GOVERNANCE DISCIPLINE =====-->
-<section class="governance-section">
+<section class="governance-section page-section section-primary">
   <div class="container">
 
     <!-- Section Header -->
     <div class="governance-header">
       <h2 class="heading">RISK & GOVERNANCE DISCIPLINE</h2>
-      <div class="space20"></div>
       <h3 class="subheading tagline">embedding prudence at every stage</h3>
-      <div class="space20"></div>
-      <p class="governance-intro">
-        Risk, for us, is the possibility of permanent capital loss rather than the short-term swings of the market.
-        Our framework embeds discipline at every stage so decisions remain measured, consistent, and aligned with
-        long-term outcomes.
-      </p>
     </div>
 
     <!-- Five Pillar Structure -->
@@ -494,7 +1024,6 @@
       
       <!-- Pillar 1 -->
       <div class="governance-pillar">
-        <span class="governance-number">01</span>
         <h3 class="governance-pillar-title">Portfolio-Level Controls</h3>
         <p class="governance-pillar-text">
           Exposure is managed through clear limits on position sizing, sector concentration, liquidity, and correlation. The objective is stability across market environments.
@@ -512,7 +1041,6 @@
 
       <!-- Pillar 3 -->
       <div class="governance-pillar">
-        <span class="governance-number">03</span>
         <h3 class="governance-pillar-title">Liquidity & Process Discipline</h3>
         <p class="governance-pillar-text">
           Each position is sized with liquidity, redemption sensitivity, and execution feasibility in mind. This ensures flexibility without compromising portfolio quality.
@@ -530,7 +1058,6 @@
 
       <!-- Pillar 5 -->
       <div class="governance-pillar">
-        <span class="governance-number">05</span>
         <h3 class="governance-pillar-title">Independent Oversight</h3>
         <p class="governance-pillar-text">
           The trustee, custodian, fund accountant, statutory auditor, and compliance advisor provide external layers of supervision, reinforcing transparency and regulatory alignment.
@@ -582,8 +1109,10 @@
       <span class="circle-dot dot-6"></span>
       <span class="circle-dot dot-7"></span>
 
-      <!-- Center - Empty for restraint and clarity -->
-      <div class="principles-center-text"></div>
+      <!-- Center - Montgomery Logo -->
+      <div class="principles-center-logo">
+        <img src="assets/img/logo/logo1.png" alt="Montgomery Capital" style="max-width: 120px; height: auto; opacity: 0.9;">
+      </div>
 
       <!-- Principle Nodes positioned around the circle -->
       <div class="principle-node principle-node-1">
@@ -632,16 +1161,13 @@
 
 
 <!-- FAQ Section -->
-<section class="faq-section-premium">
+<section class="faq-section-premium page-section section-secondary">
   <div class="container" data-aos="fade-up">
 
     <!-- Section Header -->
     <div class="row justify-content-center">
       <div class="col-lg-10 text-center">
         <h2 class="heading">INVESTOR QUERIES & CLARIFICATIONS</h2>
-        <div class="space20"></div>
-        <h3 class="subheading tagline">addressing common questions with clarity and transparency</h3>
-        <div class="space20"></div>
       </div>
     </div>
 
