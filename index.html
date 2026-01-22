@@ -22,6 +22,612 @@
   <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.css">
   <link rel="stylesheet" href="assets/css/main.css">
 
+  <!--===== UNIFIED LAYOUT SYSTEM - PAGE 1 =======-->
+  <style>
+    /* ============================================
+       SYSTEM-LEVEL CONSISTENCY FRAMEWORK
+       
+       This stylesheet enforces institutional-level consistency across Page 1:
+       
+       1. UNIFIED CONTENT FRAME
+          - All sections use same max-width (1140px) and horizontal padding (15px)
+          - Hero, About, What Defines Us, Vision/Mission/Purpose, Investment Pillars, 
+            and Fund Snapshot all align to identical left/right margins
+          - No section-specific offsets or custom padding
+       
+       2. CONSISTENT VERTICAL SPACING RHYTHM
+          - Uniform section padding (80px top/bottom on desktop, scaled responsively)
+          - Consistent spacing between headline → tagline → content
+          - Predictable inter-section transitions (no gaps)
+          - Overall spacing reduced 10-15% to avoid "airy" appearance
+       
+       3. TYPOGRAPHIC DISCIPLINE
+          - All primary headings: single line on desktop (no wrapping)
+          - Strengthened weights (800 for headings, 600 for subheadings)
+          - Tighter tracking and reduced line-height for body text
+          - Uniform font families maintained (Playfair Display, Inter)
+       
+       4. STRUCTURAL COHESION
+          - VM section image extends full height (unified block appearance)
+          - Gold band reduced to grounding element (not dominant banner)
+          - All sections feel deliberate and complete, not assembled
+       
+       Goal: Move from well-designed layout to fully resolved, institutional page
+       ============================================ */
+    
+    /* ============================================
+       MONOCHROME REVIEW MODE
+       To enable: Add 'monochrome-review' class to <body> tag
+       Example: <body class="monochrome-review">
+       To disable: Remove the class from <body>
+       
+       This mode removes color and images to assess:
+       - Alignment consistency
+       - Spacing rhythm
+       - Typographic hierarchy
+       - Structural balance
+       ============================================ */
+    
+    body.monochrome-review * {
+      /* Remove all colors - convert to grayscale */
+      color: #1a1a1a !important;
+      background-color: #ffffff !important;
+      border-color: #cccccc !important;
+    }
+    
+    body.monochrome-review .section-secondary,
+    body.monochrome-review .section-primary,
+    body.monochrome-review .section-tertiary {
+      background-color: #f5f5f5 !important;
+    }
+    
+    body.monochrome-review .section-secondary {
+      background-color: #e8e8e8 !important;
+    }
+    
+    body.monochrome-review .section-tertiary.golden-band {
+      background-color: #d0d0d0 !important;  /* Neutral gray instead of gold */
+    }
+    
+    /* Hide videos but keep image containers for structure */
+    body.monochrome-review video,
+    body.monochrome-review .bg-video {
+      display: none !important;
+    }
+    
+    /* Fade images significantly but keep structure visible */
+    body.monochrome-review img {
+      filter: grayscale(100%) brightness(0.4) !important;
+      opacity: 0.15 !important;  /* Very faded to show structure only */
+      border: 1px solid #cccccc !important;
+    }
+    
+    /* Add subtle background to image containers to show their space */
+    body.monochrome-review .about-images-area,
+    body.monochrome-review .about-images-area .img1 {
+      background-color: #f0f0f0 !important;
+      border: 1px dashed #cccccc !important;
+      min-height: 300px !important;
+    }
+    
+    body.monochrome-review .vm-left img {
+      background-color: #f0f0f0 !important;
+      border: 1px dashed #cccccc !important;
+    }
+    
+    /* Remove background gradients and overlays */
+    body.monochrome-review .hero-brand,
+    body.monochrome-review .brand-overlay {
+      background-color: #2a2a2a !important;
+      background-image: none !important;
+    }
+    
+    body.monochrome-review .hero-brand .hero-inner {
+      background-color: transparent !important;
+    }
+    
+    /* Maintain text contrast for readability */
+    body.monochrome-review .hero-brand * {
+      color: #ffffff !important;
+    }
+    
+    body.monochrome-review .heading {
+      color: #000000 !important;
+      font-weight: 800 !important;
+    }
+    
+    body.monochrome-review .subheading {
+      color: #333333 !important;
+    }
+    
+    body.monochrome-review .subheading.tagline {
+      color: #666666 !important;  /* Lighter gray instead of gold */
+      font-style: italic !important;
+    }
+    
+    body.monochrome-review .body-text {
+      color: #1a1a1a !important;
+    }
+    
+    /* Remove colored accents - use grayscale */
+    body.monochrome-review .cta {
+      background-color: #666666 !important;
+      color: #ffffff !important;
+    }
+    
+    body.monochrome-review .fund-item {
+      background-color: #ffffff !important;
+      border-color: #cccccc !important;
+    }
+    
+    body.monochrome-review .highlight-box {
+      background-color: #f0f0f0 !important;
+      border: 1px solid #cccccc !important;
+    }
+    
+    /* Footer adjustments */
+    body.monochrome-review .mc-footer {
+      background-color: #1a1a1a !important;
+    }
+    
+    body.monochrome-review .mc-footer * {
+      color: #ffffff !important;
+    }
+    
+    /* Ensure all structural elements remain visible */
+    body.monochrome-review .vm-divider {
+      background-color: #cccccc !important;
+      width: 2px !important;
+    }
+    
+    /* Maintain spacing and layout structure */
+    body.monochrome-review .container,
+    body.monochrome-review .row,
+    body.monochrome-review .col-lg-6,
+    body.monochrome-review .col-lg-7,
+    body.monochrome-review .col-lg-5 {
+      /* All structural classes remain functional */
+    }
+
+    /* ============================================
+       UNIFIED CONTENT FRAME & SPACING SYSTEM
+       ============================================ */
+    
+    :root {
+      /* Content Frame - Consistent across all sections */
+      --content-max-width: 1140px;
+      --content-horizontal-padding: 15px;
+      
+      /* Vertical Spacing Rhythm (reduced by ~12.5% from original) */
+      --section-padding-top: 80px;      /* was 90px, reduced by ~11% */
+      --section-padding-bottom: 80px;   /* was 90px, reduced by ~11% */
+      --section-gap: 0px;                /* sections are adjacent, no gap */
+      
+      /* Typography Spacing - Uniform rhythm */
+      --heading-to-tagline: 1.25rem;    /* 20px - consistent spacing */
+      --tagline-to-content: 1.75rem;    /* 28px - consistent spacing */
+      --heading-to-content: 2rem;       /* 32px - when no tagline */
+      
+      /* About section specific (was sp1: 100px, now reduced) */
+      --about-section-padding: 85px 0;  /* reduced from 100px by 15% */
+    }
+
+    /* ============================================
+       UNIFIED CONTAINER FRAME
+       ============================================ */
+    
+    /* All containers use the same max-width and padding */
+    .container,
+    .hero-brand .hero-inner.container {
+      max-width: var(--content-max-width) !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      padding-left: var(--content-horizontal-padding) !important;
+      padding-right: var(--content-horizontal-padding) !important;
+    }
+
+    /* Remove any section-specific container overrides */
+    .about1-section-area .container,
+    .page-section .container,
+    .vm-section .container,
+    .vm-wrapper,
+    .fund-snapshot-infographic .container {
+      max-width: var(--content-max-width) !important;
+      padding-left: var(--content-horizontal-padding) !important;
+      padding-right: var(--content-horizontal-padding) !important;
+    }
+    
+    /* VM wrapper - unified two-column layout */
+    .vm-wrapper {
+      width: 100% !important;
+      max-width: 100% !important;
+      display: grid !important;
+      grid-template-columns: 42% 58% !important;
+      column-gap: 2.5rem !important;
+      align-items: start !important;
+    }
+    
+    /* VM columns - no extra padding */
+    .vm-left,
+    .vm-right {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    /* ============================================
+       UNIFIED SECTION PADDING
+       ============================================ */
+    
+    /* Standardize all page sections */
+    .page-section {
+      padding-top: var(--section-padding-top) !important;
+      padding-bottom: var(--section-padding-bottom) !important;
+    }
+
+    /* About section - use unified padding */
+    .about1-section-area.sp1 {
+      padding: var(--about-section-padding) !important;
+    }
+
+    /* Remove any custom margins that create gaps */
+    .page-section + .page-section,
+    .about1-section-area + .page-section,
+    .page-section + .about1-section-area {
+      margin-top: var(--section-gap) !important;
+    }
+
+    /* ============================================
+       UNIFIED TYPOGRAPHY SPACING
+       ============================================ */
+    
+    /* Heading to Tagline spacing */
+    .heading + .subheading.tagline,
+    .heading + .tagline,
+    h2.heading + h3.subheading.tagline {
+      margin-top: var(--heading-to-tagline) !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* Tagline to Content spacing */
+    .subheading.tagline + *:not(.heading):not(.subheading),
+    .tagline + .body-text,
+    .tagline + ul,
+    .tagline + .defines-list,
+    .tagline + .fund-infogrid,
+    .tagline + .pillar-row {
+      margin-top: var(--tagline-to-content) !important;
+    }
+
+    /* Heading to Content (when no tagline) */
+    .heading + .body-text:not(.tagline),
+    .heading + ul:not(.tagline),
+    .heading + .defines-list,
+    .heading + .fund-infogrid,
+    .heading + .pillar-row {
+      margin-top: var(--heading-to-content) !important;
+    }
+
+    /* Remove inconsistent spacing utilities */
+    .space20,
+    .space32,
+    .space-margin60 {
+      margin-bottom: 0 !important;
+    }
+
+    /* Investment Pillars - remove custom spacing */
+    .heading1.space-margin60 {
+      margin-bottom: 0 !important;
+    }
+
+    /* ============================================
+       REMOVE SECTION-SPECIFIC OFFSETS
+       ============================================ */
+    
+    /* Remove custom margins and padding from sections */
+    .about1-section-area .about-images-area {
+      padding: 0 !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* Ensure about section columns align properly */
+    .about1-section-area .row {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    .about1-section-area .col-lg-6 {
+      padding-left: 15px !important;
+      padding-right: 15px !important;
+    }
+    
+    /* Ensure all Bootstrap rows work within unified content frame */
+    /* Bootstrap rows naturally offset container padding - this is correct */
+    /* Standardize column padding to maintain consistent internal spacing */
+    .container .row > [class*="col-"] {
+      padding-left: 15px !important;
+      padding-right: 15px !important;
+    }
+    
+    /* Ensure first and last columns align with container edges */
+    .container .row > [class*="col-"]:first-child {
+      padding-left: var(--content-horizontal-padding) !important;
+    }
+    
+    .container .row > [class*="col-"]:last-child {
+      padding-right: var(--content-horizontal-padding) !important;
+    }
+
+    /* VM section - remove custom positioning */
+    .vm-right {
+      margin-top: 0 !important;
+    }
+
+    /* Remove extra breaks and manual spacing */
+    .page-section br,
+    .about1-section-area br {
+      display: none;
+    }
+
+    /* Ensure consistent spacing after headings in about section */
+    .about1-section-area .heading {
+      margin-bottom: var(--heading-to-content) !important;
+    }
+
+    /* Remove manual spacing from body text paragraphs */
+    .about1-section-area .body-text + .body-text {
+      margin-top: 1.25rem !important;
+    }
+
+    /* Remove spacing from empty paragraphs */
+    .body-text:empty {
+      display: none;
+    }
+
+    /* Ensure philosophy wrapper has consistent spacing */
+    .philosophy-wrapper {
+      margin-top: var(--tagline-to-content) !important;
+    }
+
+    /* Ensure VM blocks have consistent spacing */
+    .vm-block + .vm-block {
+      margin-top: var(--tagline-to-content) !important;
+    }
+
+    /* ============================================
+       TYPOGRAPHY TIGHTENING & HEADING NO-WRAP
+       ============================================ */
+    
+    /* Primary Section Headings - No Wrap on Desktop */
+    @media (min-width: 993px) {
+      .heading {
+        white-space: nowrap !important;
+        font-weight: 800 !important;  /* Strengthened from 700 */
+        letter-spacing: -0.02em !important;  /* Tighter tracking for authority */
+        font-size: 36px !important;
+        display: block;
+        width: 100%;
+      }
+      
+      /* Adjust font-size for longest headings to ensure single line */
+      /* "ABOUT MONTGOMERY CAPITAL" - 25 characters */
+      .about1-section-area .heading {
+        font-size: clamp(32px, 3.1vw, 35px) !important;
+      }
+      
+      /* "WHAT DEFINES US" - 15 characters */
+      .defines-us-left .heading {
+        font-size: clamp(34px, 3.3vw, 36px) !important;
+      }
+      
+      /* "OUR INVESTMENT PILLARS" - 22 characters */
+      .heading1 .heading,
+      .pillar-row ~ * .heading {
+        font-size: clamp(33px, 3.2vw, 35px) !important;
+      }
+      
+      /* "VISION, MISSION & PURPOSE" - 26 characters (longest) */
+      /* Further reduced to ensure single line */
+      .vm-section .vm-left .heading {
+        font-size: clamp(28px, 2.7vw, 32px) !important;
+        white-space: nowrap !important;
+        overflow: visible !important;
+      }
+      
+      /* "FUND SNAPSHOT" - 13 characters (fits easily) */
+      .fund-snapshot-infographic .heading {
+        font-size: clamp(34px, 3.3vw, 36px) !important;
+      }
+    }
+    
+    /* Base heading styles for all screen sizes */
+    .heading {
+      font-weight: 800 !important;  /* Strengthened from 700 */
+      letter-spacing: -0.02em !important;  /* Tighter tracking for authority */
+    }
+
+    /* Tighten Body Text Typography */
+    .body-text {
+      line-height: 1.6 !important;  /* Reduced from 1.7 */
+      font-size: 17px !important;    /* Slightly reduced from 18px */
+      letter-spacing: -0.01em !important;  /* Tighter tracking */
+    }
+
+    /* Strengthen Subheading Typography */
+    .subheading {
+      font-weight: 600 !important;  /* Strengthened from 500 */
+      letter-spacing: -0.015em !important;  /* Tighter tracking */
+    }
+
+    /* Tagline subheadings maintain italic but with tighter tracking */
+    .subheading.tagline {
+      letter-spacing: -0.01em !important;
+    }
+
+    /* ============================================
+       VISION, MISSION & PURPOSE - FIXED LAYOUT
+       ============================================ */
+    
+    /* Left column - flex container for heading and image */
+    .vm-left {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    
+    /* Heading spacing */
+    .vm-left .heading {
+      flex-shrink: 0 !important;
+      margin-bottom: var(--heading-to-content) !important;
+    }
+    
+    /* Image - extends to match right column height */
+    .vm-left img {
+      width: 100% !important;
+      max-width: 420px !important;
+      flex: 1 1 auto !important;
+      object-fit: cover !important;
+      object-position: center !important;
+      min-height: 500px !important;
+      display: block !important;
+    }
+    
+    /* Right column - Vision, Mission, Purpose blocks */
+    .vm-right {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: var(--tagline-to-content) !important;
+    }
+    
+    /* VM blocks - consistent spacing */
+    .vm-block {
+      margin-bottom: 0 !important;
+    }
+    
+    /* Desktop - stretch columns to match heights */
+    @media (min-width: 993px) {
+      .vm-wrapper {
+        align-items: stretch !important;
+      }
+      
+      .vm-left {
+        height: 100% !important;
+      }
+      
+      .vm-left img {
+        min-height: 550px !important;
+      }
+    }
+
+    /* ============================================
+       GOLD BAND - REDUCED VISUAL WEIGHT
+       ============================================ */
+    
+    /* Reduce height and soften color for grounding effect */
+    .section-tertiary.golden-band {
+      padding: 50px 0 !important;  /* Reduced from 90px by ~44% */
+      background-color: #D6B884 !important;  /* Softer, lighter gold */
+    }
+    
+    /* Reduce text size slightly for less dominance */
+    .section-tertiary.golden-band .cta-header h2 {
+      font-size: 32px !important;  /* Reduced from 38px */
+      line-height: 1.4 !important;
+      margin-bottom: 0 !important;
+    }
+    
+    /* Remove extra spacing */
+    .section-tertiary.golden-band .space32 {
+      display: none !important;
+    }
+
+    /* ============================================
+       RESPONSIVE ADJUSTMENTS
+       ============================================ */
+    
+    @media (max-width: 992px) {
+      :root {
+        --section-padding-top: 60px;      /* reduced from 70px by ~14% */
+        --section-padding-bottom: 60px;    /* reduced from 70px by ~14% */
+        --about-section-padding: 60px 0;   /* reduced proportionally */
+        --heading-to-tagline: 1rem;        /* 16px */
+        --tagline-to-content: 1.5rem;      /* 24px */
+        --heading-to-content: 1.75rem;     /* 28px */
+      }
+      
+      /* Allow wrapping on tablet and below */
+      .heading {
+        white-space: normal !important;
+        font-size: 32px !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --section-padding-top: 50px;       /* reduced from 60px by ~17% */
+        --section-padding-bottom: 50px;    /* reduced from 60px by ~17% */
+        --about-section-padding: 50px 0;   /* reduced proportionally */
+        --heading-to-tagline: 0.875rem;    /* 14px */
+        --tagline-to-content: 1.25rem;    /* 20px */
+        --heading-to-content: 1.5rem;     /* 24px */
+      }
+      
+      .heading {
+        font-size: 28px !important;
+      }
+      
+      .body-text {
+        font-size: 16px !important;
+        line-height: 1.55 !important;
+      }
+      
+      /* VM section image on mobile */
+      .vm-left {
+        display: block !important;
+      }
+      
+      .vm-left img {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: auto !important;
+      }
+      
+      /* Gold band on tablet */
+      .section-tertiary.golden-band {
+        padding: 40px 0 !important;
+      }
+      
+      .section-tertiary.golden-band .cta-header h2 {
+        font-size: 28px !important;
+      }
+    }
+
+    @media (max-width: 575px) {
+      :root {
+        --section-padding-top: 40px;      /* reduced from 50px by 20% */
+        --section-padding-bottom: 40px;    /* reduced from 50px by 20% */
+        --about-section-padding: 40px 0;   /* reduced proportionally */
+        --content-horizontal-padding: 15px;
+      }
+      
+      .heading {
+        font-size: 24px !important;
+      }
+      
+      .body-text {
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+      }
+      
+      /* Gold band on mobile */
+      .section-tertiary.golden-band {
+        padding: 35px 0 !important;
+      }
+      
+      .section-tertiary.golden-band .cta-header h2 {
+        font-size: 24px !important;
+      }
+    }
+  </style>
+
   <!--=====  JS SCRIPT LINK =======-->
   <script src="assets/js/plugins/jquery-3-7-1.min.js"></script>
 
@@ -32,6 +638,14 @@
 </head>
 
 <body>
+  <!-- 
+    MONOCHROME REVIEW MODE:
+    To review Page 1 in black & white for structural assessment:
+    1. Add class "monochrome-review" to <body> tag above, OR
+    2. Open browser console and run: document.body.classList.toggle('monochrome-review')
+    
+    This removes color and images to evaluate alignment, spacing, and typography hierarchy.
+  -->
 
   <!--===== PRELOADER STARTS =======-->
   <div class="preloader">
@@ -196,13 +810,13 @@
         position: relative;
         z-index: 2;
         width: 100%;
-        max-width: 1140px;
-        /* Standardized container width */
+        max-width: var(--content-max-width, 1140px);
+        /* Unified container width */
         margin: 0 auto;
         /* Centered alignment */
         margin-top: 11rem;
         /* more vertical breathing room */
-        padding: 0 1rem 6rem 1rem;
+        padding: 0 var(--content-horizontal-padding, 15px) 6rem var(--content-horizontal-padding, 15px);
         text-align: left;
       }
 
@@ -299,9 +913,9 @@
       /* === Responsive Adjustments === */
       @media (max-width: 992px) {
         .hero-brand .hero-inner {
-          margin-left: 3%;
+          margin-left: 0;
           margin-top: 5rem;
-          padding: 0 1.25rem 4rem 1.25rem;
+          padding: 0 var(--content-horizontal-padding, 15px) 4rem var(--content-horizontal-padding, 15px);
         }
 
         .hero-brand .headline {
@@ -313,7 +927,7 @@
         .hero-brand .hero-inner {
           margin-top: 4rem;
           margin-left: 0;
-          padding: 0 1rem 3rem 1rem;
+          padding: 0 var(--content-horizontal-padding, 15px) 3rem var(--content-horizontal-padding, 15px);
         }
 
         .hero-brand .headline {
@@ -381,19 +995,16 @@
               the Investment Manager to Montgomery Capital Fund 1, a SEBI-registered Category III Alternative Investment
               Fund (Open-Ended), our mandate is simple: allocate capital with focus, conviction, and accountability.
             </p>
-            </br>
             <p class="body-text" data-aos="fade-left" data-aos-duration="950">
               Our foundation lies in the Loksun Group, a diversified enterprise spanning Real Estate, Hospitality, and
               Financial Services. This legacy of building and managing real assets with discipline and governance-first
               thinking shapes our identity and informs our approach to long-term investment management.
             </p>
-            </br>
             <p class="body-text" data-aos="fade-left" data-aos-duration="950">
               We bring the same philosophy to public markets. We invest across listed equities, pre-IPO and late-stage
               opportunities, anchor and QIB allocations, and selective special situations, but only where three elements
               intersect: quality of business, integrity of management, and scalability of outcomes.
             </p>
-            </br>
             <p class="body-text" data-aos="fade-left" data-aos-duration="950">
               Our approach reflects investment principles shaped over decades of market cycles, favouring judgement,
               restraint, and long-term thinking. We prefer depth over breadth, focus over noise, and structure over
@@ -401,7 +1012,6 @@
               conviction. We look for businesses capable of compounding across cycles, enterprises that can justify
               time, patience, and capital.
             </p>
-            </br>
             <p class="body-text" data-aos="fade-left" data-aos-duration="950">
               Montgomery Capital is not designed to be everything to everyone. It is built to be one thing: a
               principled, thoughtful, long-term manager of capital anchored in standards rather than slogans. We measure
@@ -409,9 +1019,6 @@
               time.
             </p>
 
-            <p class="body-text" data-aos="fade-left" data-aos-duration="950">
-
-            </p>
 
             <div class="philosophy-wrapper" data-aos="fade-up" data-aos-duration="900">
               <p class="philosophy-line" style="font-style: italic; font-weight:600;">
@@ -487,10 +1094,6 @@
           </div>
 
         </div>
-
-
-        </br>
-        </br>
       </div>
     </section>
 
@@ -504,29 +1107,24 @@
 
           <!-- Image below heading -->
           <img src="assets/img/all-images/vision.jpg" alt="Vision Mission Purpose"
-            style="margin-top:20px; width:420px; height:auto;">
+            style="width:420px; height:auto;">
         </div>
 
 
-        <!-- Divider Column -->
-        <div class="vm-divider"></div>
-
         <!-- Right Column -->
-        <div class="vm-right" style="margin-top: 130px">
+        <div class="vm-right">
           <div class="vm-block">
             <h3 class="subheading">Vision</h3>
             <p class="body-text">To build a trusted investment institution that stands for clarity, discipline, and
               responsible long-term capital management, creating an enduring platform for wealth compounding across
               cycles.</p>
           </div>
-          </br>
           <div class="vm-block">
             <h3 class="subheading">Mission</h3>
             <p class="body-text">To allocate capital with discretion and depth, maintain a research-led and
               governance-anchored process, and deliver resilient outcomes by investing in quality businesses with
               integrity, scalability, and durability.</p>
           </div>
-          </br>
           <div class="vm-block">
             <h3 class="subheading">Purpose</h3>
             <p class="body-text">Our purpose is to steward capital through principles rather than predictions, choosing
@@ -561,18 +1159,14 @@
           <!-- Centered Heading & Subheading -->
           <div class="row justify-content-center">
             <div class="col-lg-10 text-center">
-              <div class="heading1 space-margin60" style="text-align:center;">
+              <div class="heading1" style="text-align:center;">
 
                 <!-- Subheading -->
                 <h2 class="heading">OUR INVESTMENT PILLARS</h2>
 
-                <div class="space20"></div>
-
                 <!-- Main Heading -->
-                <h3 class="subheading" style="color:#D6B884 !important; font-style:italic;">a framework built for
+                <h3 class="subheading tagline" style="color:#D6B884 !important; font-style:italic;">a framework built for
                   clarity, consistency, and long-term outcomes </h3>
-
-                <div class="space20"></div>
 
               </div>
 
@@ -626,7 +1220,7 @@
         <div class="container">
 
           <!-- Section Heading -->
-          <div class="row justify-content-center text-center mb-5">
+          <div class="row justify-content-center text-center">
             <div class="col-lg-10">
               <h2 class="heading">FUND SNAPSHOT</h2>
               <h3 class="subheading tagline">a regulated and governance-led fund ecosystem </h3>
@@ -760,8 +1354,6 @@
                 <h2 class="text-anime-style-3">
                   "The temptation during good times is to believe that discipline is no longer necessary. History shows that this is precisely when discipline matters the most." — Raghuram Rajan
                 </h2>
-
-                <div class="space32"></div>
 
               </div>
             </div>
